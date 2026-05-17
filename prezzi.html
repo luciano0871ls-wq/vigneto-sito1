@@ -4,11 +4,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Prezzi · Il Mio Vigneto · 9,99€/anno</title>
-<meta name="description" content="Free per provare, Premium a 9,99€/anno. Meno di 1€ al mese. Cancellabile quando vuoi.">
+<meta name="description" content="Prova gratis 5 giorni senza carta. Premium a 9,99€/anno. Diagnosi AI illimitate, quaderno PAN, tesserino e molto altro.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600;700;800&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
 <header class="site-header">
@@ -31,29 +32,84 @@
 
 <section class="section">
   <div class="container">
+
     <div class="section-title">
       <span class="eyebrow">Prezzi semplici</span>
-      <h2>Scegli il tuo piano</h2>
-      <p>Niente abbonamenti nascosti. Niente carta di credito per provare. Cancellabile in qualsiasi momento dal tuo profilo.</p>
+      <h2>Scegli il piano giusto per la tua vigna</h2>
+      <p>Prova tutto senza carta di credito. Nessun vincolo. Puoi cancellare quando vuoi dal tuo profilo.</p>
     </div>
 
-    <div class="price-card">
-  <div class="price-name">Prova gratis</div>
-  <p>5 giorni senza carta di credito</p>
-  <div class="price-amount">0€<small> / 5 giorni</small></div>
-  <ul class="price-list">
-    <li>Tutte le funzioni Premium</li>
-    <li>Diagnosi AI illimitate</li>
-    <li>Quaderno di campagna completo</li>
-    <li>Stampa registro PAN</li>
-    <li>Promemoria tesserino</li>
-  </ul>
-  <a href="https://app-vigna.vercel.app" class="btn btn-secondary" style="width: 100%;">Inizia la prova →</a>
-</div>
+    <!-- ============================
+         CARTE DEI PIANI
+    ============================ -->
+    <div class="pricing">
 
+      <!-- FREE -->
+      <div class="price-card">
+        <div class="price-name">Prova gratis</div>
+        <p>Ideale per testare tutte le funzioni</p>
+        <div class="price-amount">0€<small> / 5 giorni</small></div>
+
+        <ul class="price-list">
+          <li>Diagnosi AI illimitate</li>
+          <li>Quaderno di campagna completo</li>
+          <li>Stampa registro PAN</li>
+          <li>Promemoria tesserino</li>
+          <li>Accesso completo per 5 giorni</li>
+        </ul>
+
+        <a href="https://app-vigna.vercel.app" class="btn btn-secondary" style="width:100%;">Inizia la prova →</a>
+      </div>
+
+      <!-- PREMIUM -->
       <div class="price-card featured">
         <div class="price-name">Premium</div>
-        <p>Per il viticoltore professionista</p>
+        <p>Per il viticoltore che vuole fare sul serio</p>
 
-        <!-- 🔥 NUOVO PREZZO ANNUALE -->
         <div class="price-amount">9,99€<small> / anno</small></div>
+
+        <ul class="price-list">
+          <li>Vigneti illimitati</li>
+          <li>Diagnosi AI illimitate</li>
+          <li>Quaderno di campagna completo</li>
+          <li>Stampa registro PAN A4</li>
+          <li>Promemoria tesserino fitosanitario</li>
+          <li>Compilazione AI da testo libero</li>
+          <li>Forum riservato + supporto email</li>
+        </ul>
+
+        <a href="https://app-vigna.vercel.app" class="btn btn-primary" style="width:100%;">Passa al Premium →</a>
+      </div>
+
+    </div>
+
+    <!-- ============================
+         TABELLA COMPARATIVA
+    ============================ -->
+    <div class="section-title" style="margin-top:70px;">
+      <h2>Confronta i piani</h2>
+      <p>Una panoramica chiara per scegliere il piano più adatto alla tua azienda agricola.</p>
+    </div>
+
+    <table style="width:100%; border-collapse:collapse; margin:0 auto; max-width:900px; font-size:1rem;">
+      <tr>
+        <th style="text-align:left; padding:14px 10px;">Funzione</th>
+        <th style="text-align:center; padding:14px 10px;">Prova gratis</th>
+        <th style="text-align:center; padding:14px 10px;">Premium</th>
+      </tr>
+
+      <tr><td>Diagnosi AI illimitate</td><td style="text-align:center;">✓</td><td style="text-align:center;">✓</td></tr>
+      <tr><td>Vigneti illimitati</td><td style="text-align:center;">—</td><td style="text-align:center;">✓</td></tr>
+      <tr><td>Quaderno di campagna completo</td><td style="text-align:center;">✓</td><td style="text-align:center;">✓</td></tr>
+      <tr><td>Stampa registro PAN</td><td style="text-align:center;">✓</td><td style="text-align:center;">✓ (A4)</td></tr>
+      <tr><td>Promemoria tesserino</td><td style="text-align:center;">✓</td><td style="text-align:center;">✓</td></tr>
+      <tr><td>Compilazione AI da testo libero</td><td style="text-align:center;">—</td><td style="text-align:center;">✓</td></tr>
+      <tr><td>Forum riservato + supporto email</td><td style="text-align:center;">—</td><td style="text-align:center;">✓</td></tr>
+      <tr><td>Durata</td><td style="text-align:center;">5 giorni</td><td style="text-align:center;">1 anno</td></tr>
+    </table>
+
+  </div>
+</section>
+
+</body>
+</html>
