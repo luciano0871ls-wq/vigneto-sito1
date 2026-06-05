@@ -1,0 +1,20 @@
+{
+  "name": "vigneto-sito1",
+  "version": "1.0.0",
+  "description": "Il Mio Vigneto - Diagnosi malattie vite con AI + Quaderno di Campagna PAN",
+  "private": true,
+  "scripts": {
+    "test": "echo \"No tests configured\""
+  },
+  "keywords": [
+    "vite",
+    "viticoltura",
+    "malattie",
+    "quaderno-di-campagna"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@vercel/analytics": "^1.4.1"
+  }
+}
