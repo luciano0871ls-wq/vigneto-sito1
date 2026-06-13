@@ -4,31 +4,51 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Il Mio Vigneto · Diagnosi malattie vite con AI + Quaderno di Campagna PAN</title>
-<meta name="description" content="Riconosci peronospora, oidio e botrite in 3 secondi con una foto. Quaderno di campagna digitale conforme PAN. Promemoria tesserino fitosanitario. L'app che ogni viticoltore aspettava.">
-<meta name="keywords" content="malattie vite, peronospora, oidio, botrite, quaderno di campagna, registro trattamenti fitosanitari, PAN, tesserino fitosanitario, app viticoltura">
+<title>Il Mio Vigneto · Catalogo Ministero, Alert Revocati, Diagnosi AI · App PAN per viticoltori</title>
+<meta name="description" content="L'unica app italiana sincronizzata col catalogo del Ministero della Salute. Avvisi automatici sui prodotti revocati, ricerca Schede di Sicurezza (SDS), quaderno PAN. Evita sanzioni fino a 20.000€.">
+<meta name="keywords" content="catalogo ministero salute fitosanitari, prodotti fitosanitari revocati, schede sicurezza SDS vite, quaderno di campagna PAN, registro trattamenti fitosanitari, sanzioni D.Lgs 150/2012, malattie vite, peronospora, oidio, tesserino fitosanitario">
 <meta property="og:title" content="Il Mio Vigneto · L'app per il viticoltore moderno">
-<meta property="og:description" content="Diagnosi malattie da foto + Quaderno di campagna digitale a norma di legge.">
+<meta property="og:description" content="Catalogo Ministero della Salute + alert prodotti revocati + ricerca SDS. Evita sanzioni fino a 20.000€.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://ilmiovigneto.it/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600;700;800&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
-  <!-- Google tag (gtag.js) -->
+<style>
+  .urgency-banner { background: linear-gradient(90deg, #b91c1c, #dc2626); color: white; padding: 12px 0; font-size: 0.92rem; }
+  .urgency-content { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; justify-content: center; text-align: center; }
+  .urgency-content a { color: #fff; text-decoration: underline; font-weight: 700; }
+  .urgency-icon { font-size: 1.2rem; }
+  .novita-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px,1fr)); gap: 20px; margin-top: 32px; }
+  .novita-card { background: white; border: 2px solid #e6ebe2; border-radius: 16px; padding: 24px; position: relative; transition: transform .2s, box-shadow .2s; }
+  .novita-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,0,0,0.08); }
+  .badge-new { position: absolute; top: -10px; right: 16px; background: #f59e0b; color: white; font-size: 0.7rem; font-weight: 800; padding: 4px 10px; border-radius: 999px; letter-spacing: .1em; }
+  .novita-card .icon { font-size: 2.4rem; margin-bottom: 14px; }
+  .novita-card h3 { font-size: 1.15rem; font-weight: 800; margin-bottom: 10px; color: #1a3a0a; }
+  .novita-card p { color: #4b5050; font-size: 0.95rem; line-height: 1.55; }
+  .bg-warning { background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); }
+  .sanzioni { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px,1fr)); gap: 18px; margin-top: 28px; }
+  .sanzione-card { background: white; border-left: 5px solid #dc2626; border-radius: 12px; padding: 22px; box-shadow: 0 2px 8px rgba(0,0,0,.04); }
+  .sanzione-card .amount { font-size: 1.8rem; font-weight: 900; color: #b91c1c; line-height: 1; margin-bottom: 6px; }
+  .sanzione-card .label { font-size: 0.75rem; font-weight: 700; color: #6b6b6b; text-transform: uppercase; letter-spacing: .12em; margin-bottom: 14px; }
+  .sanzione-card .reason { font-size: 0.95rem; color: #1a1a1a; font-weight: 500; line-height: 1.45; margin-bottom: 8px; }
+  .sanzione-card .law { font-size: 0.78rem; color: #6b6b6b; font-style: italic; }
+  .semaforo-demo { display: inline-flex; gap: 6px; align-items: center; margin-top: 12px; }
+  .semaforo-dot { width: 14px; height: 14px; border-radius: 50%; border: 2px solid white; box-shadow: 0 0 0 1.5px rgba(0,0,0,.2); }
+</style>
+<!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-DYV8VWN3ND"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-DYV8VWN3ND');
   gtag('config', 'AW-18183121570');
 </script>
 </head>
 <body>
 
-<!-- HEADER -->
 <header class="site-header">
   <div class="container">
     <a href="/" class="logo">
@@ -51,21 +71,27 @@
   </div>
 </header>
 
-<!-- HERO -->
+<div class="urgency-banner">
+  <div class="container urgency-content">
+    <span class="urgency-icon">⚠️</span>
+    <span><strong>Novità Giugno 2026:</strong> sincronizzazione automatica al catalogo del Ministero della Salute. Sanzioni fino a 20.000€ per uso di prodotti revocati (D.Lgs 150/2012). <a href="#novita">Scopri come tutelarti →</a></span>
+  </div>
+</div>
+
 <section class="hero">
   <div class="container hero-grid">
     <div class="fade-up">
-      <span class="hero-eyebrow">🌿 L'AI per il viticoltore</span>
-      <h1>Riconosci le malattie della vite <span class="accent">in 3 secondi</span> con una foto.</h1>
-      <p class="hero-lead">Scatta una foglia. La nostra AI ti dice se è <strong>peronospora</strong>, <strong>oidio</strong>, <strong>botrite</strong> o altro, e ti suggerisce il trattamento. Più il quaderno di campagna digitale, conforme PAN. Tutto da smartphone.</p>
+      <span class="hero-eyebrow">🌿 L'AI per il viticoltore · Conforme PAN 2024-2026</span>
+      <h1>L'unica app che ti avvisa quando un prodotto fitosanitario viene <span class="accent">revocato</span>.</h1>
+      <p class="hero-lead">Sincronizzata ogni notte col <strong>catalogo ufficiale del Ministero della Salute</strong> (17.635 prodotti). Ti segnala in tempo reale i fitofarmaci revocati, ti aiuta a trovare le <strong>Schede di Sicurezza (SDS)</strong>, riconosce le malattie da foto con AI e compila il quaderno PAN per te. <strong>Evita sanzioni fino a 20.000€.</strong></p>
       <div class="hero-cta">
         <a href="https://app-vigna.vercel.app" onclick="gtag('event','conversion',{'send_to':'AW-18183121570/864D-0272'}); return true;" class="btn btn-primary btn-large">Prova gratis 5 giorni →</a>
         <a href="#come-funziona" class="btn btn-secondary btn-large">Come funziona</a>
       </div>
       <div class="hero-trust">
-        <span><span class="dot">●</span> Conforme D.Lgs 150/2012</span>
+        <span><span class="dot">●</span> Sincronizzato Ministero Salute</span>
+        <span><span class="dot">●</span> Conforme D.Lgs 150/2012 + PAN</span>
         <span><span class="dot">●</span> Made in Italy 🇮🇹</span>
-        <span><span class="dot">●</span> Per ogni vitigno</span>
       </div>
     </div>
     <div class="hero-mockup fade-up">
@@ -89,7 +115,60 @@
   </div>
 </section>
 
-<!-- FEATURES -->
+<section class="section" id="novita" style="background: linear-gradient(180deg, #f8faf6 0%, #fff 100%);">
+  <div class="container">
+    <div class="section-title">
+      <span class="eyebrow" style="color: #f59e0b;">🆕 Novità Giugno 2026</span>
+      <h2>6 funzioni che nessun'altra app italiana ha</h2>
+      <p>Mentre gli altri ti vendono solo un registro digitale, noi abbiamo costruito strumenti di prevenzione veri. Per tenerti lontano dalle multe e con la coscienza tranquilla.</p>
+    </div>
+    <div class="novita-grid">
+      <div class="novita-card">
+        <span class="badge-new">NUOVO</span>
+        <div class="icon">🏛️</div>
+        <h3>Catalogo Ministero integrato</h3>
+        <p>Sincronizziamo ogni notte i <strong>17.635 prodotti</strong> del catalogo ufficiale del Ministero della Salute. Sempre aggiornato, sempre allineato alla normativa in vigore.</p>
+      </div>
+      <div class="novita-card">
+        <span class="badge-new">NUOVO</span>
+        <div class="icon">🚦</div>
+        <h3>Semaforo conformità su ogni trattamento</h3>
+        <p>Un pallino colorato accanto a ogni prodotto del quaderno: 🟢 autorizzato, 🟡 scaduto, 🔴 revocato. Capisci a colpo d'occhio se stai rischiando una sanzione.</p>
+        <div class="semaforo-demo">
+          <span class="semaforo-dot" style="background:#22c55e"></span>
+          <span class="semaforo-dot" style="background:#f59e0b"></span>
+          <span class="semaforo-dot" style="background:#dc2626"></span>
+          <span style="font-size:.8rem;color:#6b6b6b;margin-left:6px;">esempio reale</span>
+        </div>
+      </div>
+      <div class="novita-card">
+        <span class="badge-new">NUOVO</span>
+        <div class="icon">⚠️</div>
+        <h3>Alert prodotti revocati in tempo reale</h3>
+        <p>Se un prodotto che hai usato viene revocato dal Ministero, lo vedi <strong>subito</strong> evidenziato in rosso nel quaderno. Niente più sorprese durante un controllo ASL o NAS.</p>
+      </div>
+      <div class="novita-card">
+        <span class="badge-new">NUOVO</span>
+        <div class="icon">📄</div>
+        <h3>Ricerca Schede di Sicurezza (SDS)</h3>
+        <p>Per ogni fitofarmaco trovi un pulsante che cerca automaticamente la <strong>Scheda di Sicurezza ufficiale</strong> del produttore. Devi tenerla in azienda per legge — ora la trovi in 2 secondi.</p>
+      </div>
+      <div class="novita-card">
+        <span class="badge-new">NUOVO</span>
+        <div class="icon">🤖</div>
+        <h3>AI multi-prodotto</h3>
+        <p>Scrivi <em>"oggi rame, zolfo e Karathane su tutti i vigneti"</em> → l'AI crea <strong>3 righe separate</strong> nel quaderno, come richiede il PAN. Niente più miscele riassunte male.</p>
+      </div>
+      <div class="novita-card">
+        <span class="badge-new">NUOVO</span>
+        <div class="icon">🔍</div>
+        <h3>Catalogo cercabile da app</h3>
+        <p>Vuoi sapere se un prodotto è ancora autorizzato prima di comprarlo dal rivenditore? Cerchi il nome e vedi subito stato, principio attivo, scadenza autorizzazione e impresa titolare.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="section" id="funzioni">
   <div class="container">
     <div class="section-title">
@@ -107,7 +186,7 @@
       <div class="feature-card fade-up">
         <div class="feature-icon">📒</div>
         <h3>Quaderno di Campagna PAN</h3>
-        <p>Registra trattamenti e concimazioni a norma del D.Lgs 150/2012. Stampa il registro ufficiale in formato A4 in qualsiasi momento. Compilazione veloce con AI: scrivi e l'app crea le voci.</p>
+        <p>Registra trattamenti e concimazioni a norma del D.Lgs 150/2012. Stampa il registro ufficiale A4 in qualsiasi momento. Con semaforo Ministero e alert revocati su ogni riga.</p>
         <a href="quaderno-di-campagna.html" class="more">Scopri come →</a>
       </div>
       <div class="feature-card fade-up">
@@ -120,7 +199,49 @@
   </div>
 </section>
 
-<!-- HOW IT WORKS -->
+<section class="section bg-warning">
+  <div class="container">
+    <div class="section-title">
+      <span class="eyebrow" style="color: #b91c1c;">⚖️ I rischi reali se non sei in regola</span>
+      <h2>Una sola distrazione può costarti più di 20.000€</h2>
+      <p>ASL, NAS e Ispettorato del Lavoro aumentano ogni anno i controlli sulle aziende agricole. Ecco cosa rischi se ti trovano in difetto. <strong>Tutti questi rischi si azzerano usando Il Mio Vigneto Premium.</strong></p>
+    </div>
+    <div class="sanzioni">
+      <div class="sanzione-card">
+        <div class="label">Uso di prodotti revocati</div>
+        <div class="amount">€500 — €20.000</div>
+        <div class="reason">Utilizzo di un fitofarmaco non più autorizzato o revocato. La sanzione si applica <strong>anche se in buona fede</strong> non lo sapevi.</div>
+        <div class="law">D.Lgs 150/2012 art. 24, comma 1</div>
+      </div>
+      <div class="sanzione-card">
+        <div class="label">Registro mancante o incompleto</div>
+        <div class="amount">€500 — €1.500</div>
+        <div class="reason">Mancata tenuta del registro trattamenti fitosanitari, oppure compilazione carente (manca data, prodotto, quantità, superficie, operatore o firma).</div>
+        <div class="law">D.Lgs 150/2012 art. 24, comma 5</div>
+      </div>
+      <div class="sanzione-card">
+        <div class="label">Schede di Sicurezza non disponibili</div>
+        <div class="amount">€2.000 — €15.000</div>
+        <div class="reason">L'utilizzatore professionale è obbligato a conservare le <strong>SDS</strong> di tutti i fitofarmaci usati e renderle disponibili durante i controlli aziendali.</div>
+        <div class="law">Reg. (CE) REACH 1907/2006 + D.Lgs 81/2008</div>
+      </div>
+      <div class="sanzione-card">
+        <div class="label">Tesserino fitosanitario scaduto</div>
+        <div class="amount">€500 — €2.000</div>
+        <div class="reason">Acquisto o uso di fitofarmaci con Certificato di Abilitazione scaduto. Il rinnovo va fatto ogni 5 anni con corso obbligatorio.</div>
+        <div class="law">D.Lgs 150/2012 art. 23</div>
+      </div>
+    </div>
+    <div style="text-align: center; margin-top: 36px; max-width: 700px; margin-left: auto; margin-right: auto;">
+      <p style="font-size: 1.15rem; color: #1a1a1a; margin-bottom: 20px;">
+        <strong>Quanto costa Il Mio Vigneto Premium?</strong> 9,99€ all'anno.<br>
+        <strong>Quanto costa una sola sanzione?</strong> Fino a <strong style="color:#b91c1c;">2.000 volte di più</strong>.
+      </p>
+      <a href="https://app-vigna.vercel.app" onclick="gtag('event','conversion',{'send_to':'AW-18183121570/864D-0272'}); return true;" class="btn btn-primary btn-large">Mettiti in regola gratis per 5 giorni →</a>
+    </div>
+  </div>
+</section>
+
 <section class="section bg-vine" id="come-funziona">
   <div class="container">
     <div class="section-title">
@@ -145,7 +266,6 @@
   </div>
 </section>
 
-<!-- SPLIT 1: Quaderno di Campagna -->
 <section class="section">
   <div class="container">
     <div class="split">
@@ -153,12 +273,14 @@
       <div class="fade-up">
         <span class="hero-eyebrow">Quaderno di Campagna</span>
         <h2>A norma di legge, senza un foglio di carta</h2>
-        <p>Il <strong>D.Lgs 150/2012</strong> e il <strong>Piano d'Azione Nazionale</strong> obbligano ogni viticoltore a tenere il registro dei trattamenti fitosanitari. La nostra app lo gestisce per te.</p>
+        <p>Il <strong>D.Lgs 150/2012</strong> e il <strong>Piano d'Azione Nazionale</strong> obbligano ogni viticoltore a tenere il registro dei trattamenti fitosanitari. La nostra app lo gestisce per te, con strumenti di prevenzione che nessun'altra app ha.</p>
         <ul class="bullet-list">
-          <li>Compilazione in 30 secondi per ogni trattamento</li>
+          <li><strong>🚦 Semaforo Ministero</strong> su ogni riga: vedi subito se i prodotti che hai usato sono ancora autorizzati</li>
+          <li><strong>⚠️ Alert REVOCATO</strong> automatico se un fitofarmaco viene ritirato dal mercato</li>
+          <li><strong>🤖 AI multi-prodotto</strong>: scrivi "Karathane e rame su tutti i vigneti" → l'app crea 2 righe separate (conforme PAN)</li>
           <li>Stampa A4 conforme con tutte le colonne richieste (data, prodotto, quantità, superficie, avversità, operatore, firma)</li>
-          <li>Compilazione AI: scrivi <em>"oggi rame su tutti i vigneti"</em> e l'app crea le voci</li>
           <li>Gestione multi-vigneto con superfici precise (m², are, ettari)</li>
+          <li>Ricerca <strong>Schede di Sicurezza (SDS)</strong> direttamente dal quaderno</li>
         </ul>
         <a href="quaderno-di-campagna.html" class="btn btn-secondary" style="margin-top: 24px;">Approfondisci →</a>
       </div>
@@ -166,7 +288,6 @@
   </div>
 </section>
 
-<!-- SPLIT 2: Mappa -->
 <section class="section bg-vine">
   <div class="container">
     <div class="split split-reverse">
@@ -186,7 +307,6 @@
   </div>
 </section>
 
-<!-- PRICING TEASER -->
 <section class="section" id="prezzi">
   <div class="container">
     <div class="section-title">
@@ -214,12 +334,13 @@
         <div class="price-amount">9,99€<small> / anno</small></div>
         <p style="color: var(--accent); font-weight: 600; font-size: 0.95rem; margin: 4px 0 16px;">☕ Meno di un caffè al mese</p>
         <ul class="price-list">
+          <li><strong>Catalogo Ministero + alert revocati</strong></li>
           <li><strong>Vigneti illimitati</strong></li>
           <li><strong>Diagnosi AI illimitate</strong></li>
-          <li>Quaderno di campagna completo</li>
-          <li>Stampa registro PAN A4</li>
+          <li>Quaderno PAN con semaforo conformità</li>
+          <li>Ricerca Schede di Sicurezza (SDS)</li>
           <li>Promemoria tesserino fitosanitario</li>
-          <li>Compilazione AI da testo libero</li>
+          <li>Compilazione AI multi-prodotto</li>
           <li>Forum riservato + supporto via email</li>
         </ul>
         <a href="https://app-vigna.vercel.app" onclick="gtag('event','conversion',{'send_to':'AW-18183121570/864D-0272'}); return true;" class="btn btn-primary" style="width: 100%;">Inizia gratis 5 giorni →</a>
@@ -228,7 +349,6 @@
   </div>
 </section>
 
-<!-- FAQ -->
 <section class="section bg-vine">
   <div class="container">
     <div class="section-title">
@@ -243,6 +363,18 @@
       <details>
         <summary>Il quaderno di campagna stampato è valido legalmente?</summary>
         <p>Sì. Il nostro registro segue la struttura prevista dal D.Lgs 150/2012 e dal Piano d'Azione Nazionale (PAN): data, nome commerciale del prodotto fitosanitario, quantità impiegata, superficie trattata, avversità, nome dell'operatore e firma. La firma va apposta a mano dopo la stampa, come da prassi.</p>
+      </details>
+      <details>
+        <summary>Come fa l'app a sapere se un prodotto è stato revocato?</summary>
+        <p>Ogni notte sincronizziamo automaticamente il <strong>catalogo ufficiale del Ministero della Salute</strong> (17.635 prodotti registrati in Italia). Se il Ministero revoca un prodotto, la mattina dopo lo vedi segnalato in rosso nel tuo quaderno con il badge "REVOCATO". Sei sempre allineato alla normativa in vigore.</p>
+      </details>
+      <details>
+        <summary>Sono obbligato per legge a tenere le Schede di Sicurezza (SDS)?</summary>
+        <p>Sì. Il Regolamento REACH (CE) 1907/2006 e il D.Lgs 81/2008 sulla sicurezza sul lavoro obbligano l'utilizzatore professionale a conservare le SDS di tutti i prodotti chimici (compresi i fitofarmaci) e a renderle disponibili durante controlli ASL, INAIL e Ispettorato del Lavoro. Le sanzioni vanno da 2.000€ a 15.000€. L'app ti aiuta a trovare velocemente la SDS ufficiale di ogni prodotto che usi.</p>
+      </details>
+      <details>
+        <summary>Cosa rischio se uso un prodotto revocato senza saperlo?</summary>
+        <p>Una sanzione amministrativa <strong>da 500€ fino a 20.000€</strong> (art. 24 D.Lgs 150/2012), anche se in buona fede pensavi fosse ancora autorizzato. Le revoche vengono pubblicate sul portale del Ministero ma è quasi impossibile starci dietro manualmente. Per questo abbiamo creato il semaforo: ti accorgi del problema PRIMA di un eventuale controllo.</p>
       </details>
       <details>
         <summary>Devo essere bravo con la tecnologia per usarla?</summary>
@@ -264,7 +396,6 @@
   </div>
 </section>
 
-<!-- CHI C'È DIETRO -->
 <section class="section">
   <div class="container">
     <div class="about-founder">
@@ -279,7 +410,6 @@
       </div>
     </div>
 
-    <!-- SEZIONE SVILUPPO APP E SITI -->
     <div style="margin-top: 56px; background: linear-gradient(135deg, #1a3a0a 0%, #2d5a1b 100%); border-radius: 20px; padding: 40px; color: white;">
       <div style="max-width: 620px; margin: 0 auto; text-align: center;">
         <div style="font-size: 2.5rem; margin-bottom: 12px;">💻</div>
@@ -288,33 +418,29 @@
           Se hai un'idea per un'app, un sito web o uno strumento digitale per la tua attività, contattami — troveremo insieme la soluzione giusta.
         </p>
         <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
-          <a href="mailto:luciano0871l.s@gmail.com"
-            style="display: inline-flex; align-items: center; gap: 10px; background: white; color: #1a3a0a; padding: 14px 24px; border-radius: 12px; font-weight: 700; font-size: 0.95rem; text-decoration: none;">
+          <a href="mailto:luciano0871l.s@gmail.com" style="display: inline-flex; align-items: center; gap: 10px; background: white; color: #1a3a0a; padding: 14px 24px; border-radius: 12px; font-weight: 700; font-size: 0.95rem; text-decoration: none;">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg>
             luciano0871l.s@gmail.com
           </a>
-          <a href="https://wa.me/393385843051" target="_blank" rel="noopener noreferrer"
-            style="display: inline-flex; align-items: center; gap: 10px; background: #25D366; color: white; padding: 14px 24px; border-radius: 12px; font-weight: 700; font-size: 0.95rem; text-decoration: none;">
+          <a href="https://wa.me/393385843051" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 10px; background: #25D366; color: white; padding: 14px 24px; border-radius: 12px; font-weight: 700; font-size: 0.95rem; text-decoration: none;">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
             +39 338 584 3051
           </a>
         </div>
       </div>
     </div>
-
   </div>
 </section>
 
-<!-- FINAL CTA -->
 <div class="container">
   <div class="cta-final">
-    <h2>Inizia oggi a proteggere il tuo vigneto</h2>
-    <p>5 giorni gratis, poi 9,99€/anno. Meno di un caffè al mese per non perdere mai un trattamento.</p>
+    <h2>Stai un passo avanti a un controllo ASL</h2>
+    <p style="font-size: 1.1rem; margin-bottom: 14px;">5 giorni gratis. 9,99€/anno. <strong>Risparmia fino a 20.000€</strong> in potenziali sanzioni.</p>
+    <p style="font-size: 0.92rem; opacity: 0.85; margin-bottom: 24px;">Catalogo Ministero · Alert revocati · SDS · Quaderno PAN · Diagnosi AI · Tesserino</p>
     <a href="https://app-vigna.vercel.app" onclick="gtag('event','conversion',{'send_to':'AW-18183121570/864D-0272'}); return true;" class="btn btn-primary btn-large">Prova gratis 5 giorni →</a>
   </div>
 </div>
 
-<!-- FOOTER -->
 <footer class="site-footer">
   <div class="container">
     <div class="footer-grid">
@@ -323,7 +449,7 @@
           <span class="logo-icon">🍇</span>
           Il Mio Vigneto
         </a>
-        <p style="margin-top: 14px; color: #c5cac3; font-size: 0.9rem;">L'app italiana per la viticoltura intelligente. Diagnosi AI, quaderno di campagna PAN, tesserino fitosanitario.</p>
+        <p style="margin-top: 14px; color: #c5cac3; font-size: 0.9rem;">L'app italiana per la viticoltura intelligente. Catalogo Ministero, alert revocati, diagnosi AI, quaderno PAN.</p>
       </div>
       <div>
         <h4>Funzioni</h4>
@@ -352,10 +478,10 @@
       </div>
     </div>
     <div style="border-top: 1px solid rgba(255,255,255,0.15); padding: 16px 0; margin-bottom: 16px;">
-  <p style="font-size: 0.78rem; color: #9ca3af; line-height: 1.6; text-align: center; margin: 0;">
-    ⚠️ Le informazioni presenti su questo sito hanno scopo esclusivamente informativo e divulgativo. Non sostituiscono il parere di un professionista qualificato (agronomo, medico del lavoro, consulente della sicurezza). Il Mio Vigneto non si assume alcuna responsabilità per danni derivanti dall'utilizzo delle informazioni qui riportate.
-  </p>
-</div>
+      <p style="font-size: 0.78rem; color: #9ca3af; line-height: 1.6; text-align: center; margin: 0;">
+        ⚠️ Le informazioni presenti su questo sito hanno scopo esclusivamente informativo e divulgativo. Non sostituiscono il parere di un professionista qualificato (agronomo, medico del lavoro, consulente della sicurezza). Il Mio Vigneto non si assume alcuna responsabilità per danni derivanti dall'utilizzo delle informazioni qui riportate.
+      </p>
+    </div>
     <div class="footer-bottom">
       <span>© 2026 Il Mio Vigneto · Tutti i diritti riservati</span>
       <span>
