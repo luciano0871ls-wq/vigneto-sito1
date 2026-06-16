@@ -1,13 +1,28 @@
+Apri quaderno-di-campagna.html → Ctrl+A → incolla questo → Commit
 <!DOCTYPE html>
 <html lang="it">
 <head>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-DYV8VWN3ND"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18183121570"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', 'G-DYV8VWN3ND');
   gtag('config', 'AW-18183121570');
+
+  function gtag_report_conversion(url) {
+    var callback = function () {
+      if (typeof(url) != 'undefined') {
+        window.location = url;
+      }
+    };
+    gtag('event', 'conversion', {
+        'send_to': 'AW-18183121570/864D-0272',
+        'event_callback': callback,
+        'event_timeout': 2000
+    });
+    return false;
+  }
 </script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -51,8 +66,8 @@
       <a href="tesserino-fitosanitario.html">Tesserino</a>
       <a href="prezzi.html">Prezzi</a>
       <a href="blog.html">Blog</a>
-      <a href="https://app-vigna.vercel.app" onclick="gtag('event','conversion',{'send_to':'AW-18183121570/864D-0272'}); return true;" class="btn-header-outline">Prova gratis</a>
-      <a href="https://app-vigna.vercel.app" onclick="gtag('event','conversion',{'send_to':'AW-18183121570/864D-0272'}); return true;" class="btn-header">Apri l'app</a>
+      <a href="https://app-vigna.vercel.app" onclick="return gtag_report_conversion('https://app-vigna.vercel.app');" class="btn-header-outline">Prova gratis</a>
+      <a href="https://app-vigna.vercel.app" onclick="return gtag_report_conversion('https://app-vigna.vercel.app');" class="btn-header">Apri l'app</a>
     </nav>
   </div>
 </header>
@@ -60,7 +75,7 @@
 <div class="urgency-banner">
   <div class="container urgency-content">
     <span>⚠️</span>
-    <span><strong>Novità 2026:</strong> il nostro Quaderno è sincronizzato col catalogo del Ministero della Salute. Ti avvisa subito se usi un prodotto revocato. <a href="https://app-vigna.vercel.app">Prova gratis 5 giorni →</a></span>
+    <span><strong>Novità 2026:</strong> il nostro Quaderno è sincronizzato col catalogo del Ministero della Salute. Ti avvisa subito se usi un prodotto revocato. <a href="https://app-vigna.vercel.app" onclick="return gtag_report_conversion('https://app-vigna.vercel.app');">Prova gratis 5 giorni →</a></span>
   </div>
 </div>
 
@@ -71,7 +86,7 @@
       <h1>L'unico Quaderno di Campagna che ti avvisa quando usi un prodotto <span class="accent">revocato</span></h1>
       <p class="hero-lead">Sincronizzato ogni notte col <strong>catalogo ufficiale del Ministero della Salute</strong> (17.635 prodotti). Semaforo conformità su ogni trattamento, ricerca <strong>Schede di Sicurezza (SDS)</strong>, compilazione AI multi-prodotto. <strong>Evita sanzioni fino a 20.000€.</strong></p>
       <div class="hero-cta">
-        <a href="https://app-vigna.vercel.app" onclick="gtag('event','conversion',{'send_to':'AW-18183121570/864D-0272'}); return true;" class="btn btn-primary btn-large">Inizia gratis 5 giorni →</a>
+        <a href="https://app-vigna.vercel.app" onclick="return gtag_report_conversion('https://app-vigna.vercel.app');" class="btn btn-primary btn-large">Inizia gratis 5 giorni →</a>
       </div>
     </div>
     <div class="hero-mockup fade-up">
@@ -273,7 +288,7 @@
     <h2>Stai un passo avanti a un controllo ASL</h2>
     <p style="font-size: 1.1rem; margin-bottom: 14px;">5 giorni gratis. 9,99€/anno. <strong>Risparmia fino a 20.000€</strong> in potenziali sanzioni.</p>
     <p style="font-size: 0.92rem; opacity: 0.85; margin-bottom: 24px;">Semaforo Ministero · Alert revocati · Ricerca SDS · Stampa A4 PAN · AI multi-prodotto</p>
-    <a href="https://app-vigna.vercel.app" onclick="gtag('event','conversion',{'send_to':'AW-18183121570/864D-0272'}); return true;" class="btn btn-primary btn-large">Inizia gratis 5 giorni →</a>
+    <a href="https://app-vigna.vercel.app" onclick="return gtag_report_conversion('https://app-vigna.vercel.app');" class="btn btn-primary btn-large">Inizia gratis 5 giorni →</a>
   </div>
 </div>
 
