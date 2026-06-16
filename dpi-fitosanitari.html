@@ -2,13 +2,27 @@
 <html lang="it">
 <head>
 <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-DYV8VWN3ND"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18183121570"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', 'G-DYV8VWN3ND');
   gtag('config', 'AW-18183121570');
+
+  function gtag_report_conversion(url) {
+    var callback = function () {
+      if (typeof(url) != 'undefined') {
+        window.location = url;
+      }
+    };
+    gtag('event', 'conversion', {
+        'send_to': 'AW-18183121570/864D-0272',
+        'event_callback': callback,
+        'event_timeout': 2000
+    });
+    return false;
+  }
 </script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,7 +32,9 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600;700;800&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
-</head>  
+</head>
+<body>
+
 <header class="site-header">
   <div class="container">
     <a href="index.html" class="logo">
@@ -32,11 +48,9 @@
       <a href="tesserino-fitosanitario.html">Tesserino</a>
       <a href="prezzi.html">Prezzi</a>
       <a href="blog.html">Blog</a>
-      <a href="https://app-vigna.vercel.app" onclick="gtag('event','conversion',{'send_to':'AW-18183121570/864D-0272'}); return true;" class="btn-header-outline">Prova gratis</a>
-      <a href="https://app-vigna.vercel.app" onclick="gtag('event','conversion',{'send_to':'AW-18183121570/864D-0272'}); return true;" class="btn-header">Apri l'app</a>
+      <a href="https://app-vigna.vercel.app" onclick="return gtag_report_conversion('https://app-vigna.vercel.app');" class="btn-header-outline">Prova gratis</a>
+      <a href="https://app-vigna.vercel.app" onclick="return gtag_report_conversion('https://app-vigna.vercel.app');" class="btn-header">Apri l'app</a>
     </nav>
-  </div>
-</header>    
   </div>
 </header>
 
@@ -280,9 +294,10 @@
   <div class="cta-final">
     <h2>I DPI ti salvano la vita</h2>
     <p>Non sono burocrazia, sono la differenza tra una stagione di vigna sana e un mese in ospedale. Investi 100€ in DPI a norma e dormi tranquillo.</p>
-    <a href="https://app-vigna.vercel.app" onclick="gtag('event','conversion',{'send_to':'AW-18183121570/864D-0272'}); return true;" class="btn btn-primary btn-large">Apri l'app gratis →</a>
+    <a href="https://app-vigna.vercel.app" onclick="return gtag_report_conversion('https://app-vigna.vercel.app');" class="btn btn-primary btn-large">Apri l'app gratis →</a>
   </div>
 </div>
+
 <section class="section">
   <div class="container">
     <div style="background: #fff8e1; border-left: 4px solid #f59e0b; padding: 24px 28px; border-radius: 8px; max-width: 860px; margin: 0 auto;">
@@ -295,6 +310,7 @@
     </div>
   </div>
 </section>
+
 <footer class="site-footer">
   <div class="container">
     <div class="footer-bottom" style="border: 0;">
