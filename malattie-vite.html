@@ -1,14 +1,28 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-DYV8VWN3ND"></script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18183121570"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', 'G-DYV8VWN3ND');
   gtag('config', 'AW-18183121570');
+
+  function gtag_report_conversion(url) {
+    var callback = function () {
+      if (typeof(url) != 'undefined') {
+        window.location = url;
+      }
+    };
+    gtag('event', 'conversion', {
+        'send_to': 'AW-18183121570/864D-0272',
+        'event_callback': callback,
+        'event_timeout': 2000
+    });
+    return false;
+  }
 </script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,7 +31,7 @@
 <meta name="keywords" content="riconoscere malattie vite, peronospora vite cura, oidio vite trattamento, botrite vite rimedi, malattie foglie vite, diagnosi malattia vite app, mal dell'esca">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600;700;800&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css"> 
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -34,8 +48,8 @@
       <a href="tesserino-fitosanitario.html">Tesserino</a>
       <a href="prezzi.html">Prezzi</a>
       <a href="blog.html">Blog</a>
-     <a href="https://app-vigna.vercel.app" onclick="gtag('event','conversion',{'send_to':'AW-18183121570/864D-0272'}); return true;" class="btn-header-outline">Prova gratis</a>
-<a href="https://app-vigna.vercel.app" onclick="gtag('event','conversion',{'send_to':'AW-18183121570/864D-0272'}); return true;" class="btn-header">Apri l'app</a>
+      <a href="https://app-vigna.vercel.app" onclick="return gtag_report_conversion('https://app-vigna.vercel.app');" class="btn-header-outline">Prova gratis</a>
+      <a href="https://app-vigna.vercel.app" onclick="return gtag_report_conversion('https://app-vigna.vercel.app');" class="btn-header">Apri l'app</a>
     </nav>
   </div>
 </header>
@@ -47,7 +61,7 @@
       <h1>Riconosci le malattie della vite <span class="accent">con una foto</span></h1>
       <p class="hero-lead">Peronospora, oidio, botrite, mal dell'esca, flavescenza dorata. La nostra intelligenza artificiale identifica la malattia in 3 secondi e ti dice esattamente come trattarla.</p>
       <div class="hero-cta">
-        <a href="https://app-vigna.vercel.app" onclick="gtag('event','conversion',{'send_to':'AW-18183121570/864D-0272'}); return true;" class="btn btn-primary btn-large">Prova subito gratis</a>
+        <a href="https://app-vigna.vercel.app" onclick="return gtag_report_conversion('https://app-vigna.vercel.app');" class="btn btn-primary btn-large">Prova subito gratis</a>
       </div>
     </div>
     <div class="hero-mockup fade-up">
@@ -147,17 +161,17 @@
   <div class="cta-final">
     <h2>Smetti di fare diagnosi a occhio</h2>
     <p>Una foto vale più di un'ora di ricerca su Google. Inizia oggi a proteggere il tuo vigneto con la diagnosi AI.</p>
-    <a href="https://app-vigna.vercel.app" onclick="gtag('event','conversion',{'send_to':'AW-18183121570/864D-0272'}); return true;" class="btn btn-primary btn-large">Apri l'app gratis →</a>
+    <a href="https://app-vigna.vercel.app" onclick="return gtag_report_conversion('https://app-vigna.vercel.app');" class="btn btn-primary btn-large">Apri l'app gratis →</a>
   </div>
 </div>
 
 <footer class="site-footer">
   <div class="container">
     <div style="border-top: 1px solid rgba(255,255,255,0.15); padding: 16px 0; margin-bottom: 16px;">
-  <p style="font-size: 0.78rem; color: #9ca3af; line-height: 1.6; text-align: center; margin: 0;">
-    ⚠️ Le informazioni presenti su questo sito hanno scopo esclusivamente informativo e divulgativo. Non sostituiscono il parere di un professionista qualificato (agronomo, medico del lavoro, consulente della sicurezza). Il Mio Vigneto non si assume alcuna responsabilità per danni derivanti dall'utilizzo delle informazioni qui riportate.
-  </p>
-</div>
+      <p style="font-size: 0.78rem; color: #9ca3af; line-height: 1.6; text-align: center; margin: 0;">
+        ⚠️ Le informazioni presenti su questo sito hanno scopo esclusivamente informativo e divulgativo. Non sostituiscono il parere di un professionista qualificato (agronomo, medico del lavoro, consulente della sicurezza). Il Mio Vigneto non si assume alcuna responsabilità per danni derivanti dall'utilizzo delle informazioni qui riportate.
+      </p>
+    </div>
     <div class="footer-bottom" style="border: 0;">
       <span>© 2026 Il Mio Vigneto</span>
       <span><a href="index.html">Home</a> · <a href="prezzi.html">Prezzi</a> · <a href="blog.html">Blog</a></span>
