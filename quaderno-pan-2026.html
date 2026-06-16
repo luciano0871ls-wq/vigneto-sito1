@@ -1,13 +1,27 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-DYV8VWN3ND"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18183121570"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', 'G-DYV8VWN3ND');
   gtag('config', 'AW-18183121570');
+
+  function gtag_report_conversion(url) {
+    var callback = function () {
+      if (typeof(url) != 'undefined') {
+        window.location = url;
+      }
+    };
+    gtag('event', 'conversion', {
+        'send_to': 'AW-18183121570/864D-0272',
+        'event_callback': callback,
+        'event_timeout': 2000
+    });
+    return false;
+  }
 </script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -47,8 +61,8 @@
       <a href="../quaderno-di-campagna.html">Quaderno di Campagna</a>
       <a href="../prezzi.html">Prezzi</a>
       <a href="../blog.html">Blog</a>
-      <a href="https://app-vigna.vercel.app" onclick="gtag('event','conversion',{'send_to':'AW-18183121570/864D-0272'}); return true;" class="btn-header-outline">Prova gratis</a>
-      <a href="https://app-vigna.vercel.app" onclick="gtag('event','conversion',{'send_to':'AW-18183121570/864D-0272'}); return true;" class="btn-header">Apri l'app</a>
+      <a href="https://app-vigna.vercel.app" onclick="return gtag_report_conversion('https://app-vigna.vercel.app');" class="btn-header-outline">Prova gratis</a>
+      <a href="https://app-vigna.vercel.app" onclick="return gtag_report_conversion('https://app-vigna.vercel.app');" class="btn-header">Apri l'app</a>
     </nav>
   </div>
 </header>
@@ -56,7 +70,7 @@
 <div class="urgency-banner">
   <div class="container urgency-content">
     <span>⚠️</span>
-    <span><strong>Novità 2026:</strong> sincronizzazione automatica al catalogo del Ministero della Salute con alert revocati in tempo reale. <a href="https://app-vigna.vercel.app">Prova gratis 5 giorni →</a></span>
+    <span><strong>Novità 2026:</strong> sincronizzazione automatica al catalogo del Ministero della Salute con alert revocati in tempo reale. <a href="https://app-vigna.vercel.app" onclick="return gtag_report_conversion('https://app-vigna.vercel.app');">Prova gratis 5 giorni →</a></span>
   </div>
 </div>
 
@@ -159,7 +173,7 @@
     <strong>📒 Quaderno di Campagna digitale + alert Ministero</strong>
     L'unica app italiana che ti avvisa in tempo reale quando un prodotto viene revocato. Compila il registro in 30 secondi e stampa A4 conforme PAN.
     <br><br>
-    <a href="https://app-vigna.vercel.app" onclick="gtag('event','conversion',{'send_to':'AW-18183121570/864D-0272'}); return true;" class="btn btn-primary">Inizia gratis 5 giorni →</a>
+    <a href="https://app-vigna.vercel.app" onclick="return gtag_report_conversion('https://app-vigna.vercel.app');" class="btn btn-primary">Inizia gratis 5 giorni →</a>
   </div>
 
   <h2>Vantaggi del quaderno digitale rispetto al cartaceo</h2>
