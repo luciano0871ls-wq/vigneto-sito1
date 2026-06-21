@@ -40,12 +40,17 @@
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-DYV8VWN3ND"></script>
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-gtag('config', 'G-DYV8VWN3ND');
-  gtag('config', 'AW-18183121570');
-</script>  
+  <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-DYV8VWN3ND', {
+            'linker': { 'domains': ['ilmiovigneto.it', 'www.ilmiovigneto.it', 'app-vigna.vercel.app'], 'accept_incoming': true }
+          });
+          gtag('config', 'AW-18183121570', {
+            'linker': { 'domains': ['ilmiovigneto.it', 'www.ilmiovigneto.it', 'app-vigna.vercel.app'], 'accept_incoming': true }
+          });
+        </script>
 </head>
 <body>
 
@@ -62,8 +67,8 @@ gtag('config', 'G-DYV8VWN3ND');
       <a href="tesserino-fitosanitario.html">Tesserino</a>
       <a href="prezzi.html">Prezzi</a>
       <a href="blog.html">Blog</a>
-      <a href="https://app-vigna.vercel.app" onclick="gtag('event','conversion',{'send_to':'AW-18183121570/864D-0272'}); return true;" class="btn-header-outline">Prova gratis</a>
-      <a href="https://app-vigna.vercel.app" onclick="gtag('event','conversion',{'send_to':'AW-18183121570/864D-0272'}); return true;" class="btn-header">Apri l'app</a>
+      <a href="https://app-vigna.vercel.app" class="btn btn-primary btn-large">Prova gratis 5 giorni →</a>
+      <a href="https://app-vigna.vercel.app" class="btn btn-primary btn-large">Prova gratis 5 giorni →</a>
     </nav>
     <button class="menu-toggle" onclick="document.getElementById('nav').classList.toggle('open')" aria-label="Menu">
       <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
