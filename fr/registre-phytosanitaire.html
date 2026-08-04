@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18183121570"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DYV8VWN3ND');
+  gtag('config', 'AW-18183121570');
+
+  function gtag_report_conversion(url) {
+    var callback = function () {
+      if (typeof(url) != 'undefined') {
+        window.location = url;
+      }
+    };
+    gtag('event', 'conversion', {
+        'send_to': 'AW-18183121570/864D-0272',
+        'event_callback': callback,
+        'event_timeout': 2000
+    });
+    return false;
+  }
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Registre phytosanitaire numérique avec alertes produits retirés | Aligné E-Phy + Écophyto</title>
+<meta name="description" content="Le registre phytosanitaire numérique synchronisé avec la base officielle E-Phy (ANSES). Alertes automatiques sur les produits retirés, recherche des FDS. Restez en conformité facilement.">
+<meta name="keywords" content="registre phytosanitaire numérique, cahier d'épandage, registre traitements vigne obligatoire, produits phytosanitaires retirés, fiches de données de sécurité FDS, registre phytosanitaire 2027, écophyto registre">
+<meta property="og:title" content="Registre phytosanitaire numérique · Alertes retraits E-Phy">
+<meta property="og:description" content="Le registre synchronisé avec la base E-Phy (ANSES). Alertes automatiques sur les produits retirés.">
+<meta property="og:type" content="article">
+<link rel="canonical" href="https://ilmiovigneto.it/fr/registre-phytosanitaire.html">
+<link rel="alternate" hreflang="it" href="https://ilmiovigneto.it/quaderno-di-campagna.html">
+<link rel="alternate" hreflang="fr" href="https://ilmiovigneto.it/fr/registre-phytosanitaire.html">
+<link rel="alternate" hreflang="x-default" href="https://ilmiovigneto.it/quaderno-di-campagna.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600;700;800&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
+<style>
+  .urgency-banner { background: linear-gradient(90deg, #b91c1c, #dc2626); color: white; padding: 12px 0; font-size: 0.92rem; }
+  .urgency-content { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; justify-content: center; text-align: center; }
+  .urgency-content a { color: #fff; text-decoration: underline; font-weight: 700; }
+  .semaforo-row { background: white; border: 2px solid #e6ebe2; border-radius: 14px; padding: 18px 22px; display: flex; align-items: center; gap: 16px; margin-bottom: 12px; box-shadow: 0 2px 8px rgba(0,0,0,.04); }
+  .semaforo-dot-lg { width: 24px; height: 24px; border-radius: 50%; flex-shrink: 0; border: 3px solid white; box-shadow: 0 0 0 2px rgba(0,0,0,.2); }
+  .semaforo-text strong { display: block; font-size: 1.05rem; color: #1a3a0a; margin-bottom: 4px; }
+  .semaforo-text span { font-size: 0.9rem; color: #4b5050; }
+  .sanzione-box { background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); border-left: 6px solid #dc2626; border-radius: 14px; padding: 28px 32px; margin: 32px 0; }
+  .sanzione-box h3 { font-size: 1.35rem; color: #b91c1c; margin-bottom: 12px; font-weight: 800; }
+  .sanzione-box .big-num { font-size: 2.8rem; font-weight: 900; color: #b91c1c; line-height: 1; margin: 8px 0 12px; }
+  .sanzione-box .law { font-size: 0.82rem; color: #6b6b6b; font-style: italic; margin-top: 10px; }
+  .feature-callout { background: #ecfdf5; border: 2px solid #22c55e; border-radius: 14px; padding: 24px; margin: 24px 0; }
+  .feature-callout h4 { color: #166534; font-weight: 800; margin-bottom: 10px; font-size: 1.1rem; }
+  .lang-switch { font-size: 0.82rem; opacity: 0.75; }
+  .lang-modal-overlay { display: none; position: fixed; inset: 0; background: rgba(17,20,17,0.55); z-index: 200; align-items: center; justify-content: center; padding: 20px; }
+  .lang-modal-overlay.open { display: flex; }
+  .lang-modal { background: var(--surface); border-radius: 16px; padding: 28px 26px; max-width: 360px; width: 100%; text-align: center; box-shadow: var(--shadow-strong); position: relative; }
+  .lang-modal-close { position: absolute; top: 10px; right: 12px; background: none; border: 0; cursor: pointer; font-size: 1.3rem; line-height: 1; color: var(--text-muted); padding: 4px 8px; border-radius: 8px; }
+  .lang-modal-close:hover { color: var(--text); background: var(--secondary); }
+  .lang-modal-text { font-family: 'Work Sans', sans-serif; font-weight: 700; font-size: 1.05rem; color: var(--text); margin-bottom: 20px; }
+  .lang-modal-actions { display: flex; flex-direction: column; gap: 10px; }
+  .lang-modal-actions .btn { width: 100%; }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a href="index.html" class="logo">
+      <span class="logo-icon">🍇</span>
+      Il Mio Vigneto
+    </a>
+    <nav class="nav">
+      <a href="epi-phytosanitaires.html">EPI Phytosanitaires</a>
+      <a href="maladies-vigne.html">Maladies de la vigne</a>
+      <a href="registre-phytosanitaire.html">Registre phytosanitaire</a>
+      <a href="certiphyto.html">Certiphyto</a>
+      <a href="prezzi.html">Tarifs</a>
+      <a href="blog.html">Blog</a>
+      <a href="../quaderno-di-campagna.html" class="lang-switch" onclick="return openLangModal(event)">IT</a>
+      <a href="https://app-vigna.vercel.app?lang=fr" onclick="return gtag_report_conversion('https://app-vigna.vercel.app?lang=fr');" class="btn-header-outline">Essai gratuit</a>
+      <a href="https://app-vigna.vercel.app?lang=fr" onclick="return gtag_report_conversion('https://app-vigna.vercel.app?lang=fr');" class="btn-header">Ouvrir l'appli</a>
+    </nav>
+  </div>
+</header>
+
+<div class="urgency-banner">
+  <div class="container urgency-content">
+    <span>⚠️</span>
+    <span><strong>À savoir :</strong> notre registre est synchronisé avec la base E-Phy (ANSES). Il vous alerte immédiatement en cas d'usage d'un produit retiré. <a href="https://app-vigna.vercel.app?lang=fr" onclick="return gtag_report_conversion('https://app-vigna.vercel.app?lang=fr');">Essai gratuit 5 jours →</a></span>
+  </div>
+</div>
+
+<section class="hero">
+  <div class="container hero-grid">
+    <div class="fade-up">
+      <span class="hero-eyebrow">📒 Aligné Écophyto + Synchronisé E-Phy</span>
+      <h1>Le seul registre phytosanitaire qui vous alerte quand vous utilisez un produit <span class="accent">retiré</span></h1>
+      <p class="hero-lead">Synchronisé avec la base officielle <strong>E-Phy (ANSES)</strong>. Statut de conformité sur chaque traitement, recherche des <strong>Fiches de Données de Sécurité (FDS)</strong>, saisie IA multi-produits.</p>
+      <div class="hero-cta">
+        <a href="https://app-vigna.vercel.app?lang=fr" onclick="return gtag_report_conversion('https://app-vigna.vercel.app?lang=fr');" class="btn btn-primary btn-large">Commencer gratuitement 5 jours →</a>
+      </div>
+    </div>
+    <div class="hero-mockup fade-up">
+      <div class="phone">
+        <div class="phone-status"></div>
+        <div class="phone-screen">
+          <span class="phone-tag">Traitement #14</span>
+          <div class="phone-title">🔴 Produit retiré</div>
+          <div class="phone-sub">⚠️ RETIRÉ · Parcelle Vieille Vigne · 12 juin 2026</div>
+          <div class="phone-card" style="background:#fee2e2; border-left:4px solid #dc2626;">
+            <strong>Alerte E-Phy :</strong> ce produit a été retiré. Ne pas utiliser.<br>
+            <small>Vérifiez votre situation avec un conseiller si besoin.</small>
+          </div>
+          <div class="phone-card">
+            <strong>FDS disponible :</strong> recherchez la fiche de données de sécurité officielle →
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-title">
+      <span class="eyebrow">Obligation légale</span>
+      <h2>Le registre phytosanitaire est une obligation</h2>
+      <p style="max-width: 760px;">Le <strong>Code rural et de la pêche maritime</strong> et la stratégie <strong>Écophyto</strong> imposent à tout utilisateur professionnel de produits phytosanitaires de tenir un registre des traitements à jour. Depuis le <strong>1er janvier 2027</strong>, la tenue numérique devient obligatoire (de nouvelles mentions sont déjà exigées sur papier depuis le 1er janvier 2026).</p>
+    </div>
+
+    <div class="sanzione-box">
+      <h3>⚖️ Ce que vous risquez réellement en cas de manquement</h3>
+      <div class="big-num">Jusqu'à 150 000 €</div>
+      <p style="font-size: 1.05rem; color: #1a1a1a; font-weight: 500;">Ce montant s'applique spécifiquement à l'utilisation d'un produit sans autorisation de mise sur le marché (AMM) dans les cas les plus graves. Pour les autres manquements (registre incomplet, FDS manquantes, Certiphyto expiré), des sanctions sont prévues mais leur montant doit être vérifié au cas par cas.</p>
+      <p class="law">Références : Code rural art. L253-17 · Arrêté du 24 décembre 2025 · Règlement (CE) REACH 1907/2006</p>
+    </div>
+
+    <div class="split">
+      <div class="visual">📋</div>
+      <div class="fade-up">
+        <h2>Ce que vous devez enregistrer</h2>
+        <ul class="bullet-list">
+          <li><strong>Date du traitement</strong> (exacte, pas approximative)</li>
+          <li><strong>Nom commercial du produit phytosanitaire</strong> utilisé</li>
+          <li><strong>Quantité utilisée</strong> en litres ou kilogrammes</li>
+          <li><strong>Surface traitée</strong> en hectares</li>
+          <li><strong>Cible du traitement</strong> (maladie ou ravageur)</li>
+          <li><strong>Nom de l'opérateur</strong> ayant réalisé le traitement</li>
+          <li><strong>Signature</strong> du responsable (à la main après impression)</li>
+          <li><strong>Une ligne distincte par produit</strong> (pas de mélanges résumés)</li>
+        </ul>
+        <p style="margin-top: 18px;">Le registre doit être conservé et présenté en cas de contrôle.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section bg-vine">
+  <div class="container">
+    <div class="section-title">
+      <span class="eyebrow">🆕 Numérique dès maintenant</span>
+      <h2>🚦 Le statut de conformité qui vous évite une sanction</h2>
+      <p style="max-width: 780px;">Sur chaque ligne de votre registre apparaît un indicateur coloré donnant en temps réel le statut du produit auprès d'E-Phy.</p>
+    </div>
+
+    <div style="max-width: 720px; margin: 0 auto;">
+      <div class="semaforo-row">
+        <div class="semaforo-dot-lg" style="background:#22c55e;"></div>
+        <div class="semaforo-text">
+          <strong>🟢 AUTORISÉ</strong>
+          <span>Le produit est régulièrement autorisé. Tout est en règle.</span>
+        </div>
+      </div>
+      <div class="semaforo-row">
+        <div class="semaforo-dot-lg" style="background:#f59e0b;"></div>
+        <div class="semaforo-text">
+          <strong>🟡 EN FIN DE VALIDITÉ</strong>
+          <span>L'autorisation du produit arrive à échéance. Vérifiez avant tout nouvel achat.</span>
+        </div>
+      </div>
+      <div class="semaforo-row">
+        <div class="semaforo-dot-lg" style="background:#dc2626;"></div>
+        <div class="semaforo-text">
+          <strong>🔴 RETIRÉ</strong>
+          <span>L'autorisation du produit a été retirée. Usage interdit.</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="feature-callout" style="max-width:720px; margin: 32px auto 0;">
+      <h4>✅ Synchronisation automatique</h4>
+      <p>Notre appli synchronise régulièrement les données de la base officielle E-Phy (ANSES). Votre registre reste à jour. <strong>Aucun travail supplémentaire pour vous.</strong></p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-title">
+      <span class="eyebrow">📄 Fiches de Données de Sécurité (FDS)</span>
+      <h2>Une obligation que peu connaissent</h2>
+      <p style="max-width: 780px;">Peu de viticulteurs le savent, mais vous devez conserver dans votre exploitation les Fiches de Données de Sécurité de tous les produits phytosanitaires utilisés, et les présenter lors d'un contrôle.</p>
+    </div>
+
+    <div class="sanzione-box">
+      <h3>⚖️ Obligation de conservation des FDS</h3>
+      <p style="font-size: 1.05rem; color: #1a1a1a; font-weight: 500;">Des sanctions sont prévues pour l'utilisateur professionnel qui ne présente pas les FDS lors d'un contrôle. Le montant doit être vérifié au cas par cas.</p>
+      <p class="law">Règlement (CE) REACH 1907/2006</p>
+    </div>
+
+    <div class="split split-reverse">
+      <div class="visual">📄</div>
+      <div class="fade-up">
+        <h2>Retrouvez-les en 2 secondes depuis le registre</h2>
+        <p>Pour chaque produit enregistré, un bouton <strong>« Rechercher la FDS »</strong> ouvre automatiquement la recherche de la fiche officielle du fabricant au format PDF.</p>
+        <ul class="bullet-list">
+          <li>Recherche directe sur le site officiel du fabricant</li>
+          <li>Documents à jour de la révision la plus récente</li>
+          <li>Impression directe depuis le navigateur, à archiver dans l'exploitation</li>
+          <li>Prêt à présenter lors d'un éventuel contrôle</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section bg-vine">
+  <div class="container">
+    <div class="section-title">
+      <span class="eyebrow">Comment le remplir avec l'appli</span>
+      <h2>3 façons de rester en règle</h2>
+    </div>
+    <div class="features">
+      <div class="feature-card">
+        <div class="feature-icon">✏️</div>
+        <h3>Saisie manuelle</h3>
+        <p>Formulaire rapide avec les champs déjà prêts. L'appli reconnaît automatiquement la substance active, le délai avant récolte et le statut E-Phy du produit.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🤖</div>
+        <h3>Saisie IA multi-produits</h3>
+        <p>Écrivez <em>« aujourd'hui cuivre, soufre et un fongicide sur la Vieille Vigne »</em> et l'appli crée <strong>3 lignes distinctes</strong> dans le registre. Fini les mélanges résumés.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🖨️</div>
+        <h3>Impression conforme</h3>
+        <p>Un clic sur « Imprimer ». Prêt à signer à la main et à archiver, avec toutes les colonnes requises par la réglementation.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-title">
+      <span class="eyebrow">Questions fréquentes</span>
+      <h2>FAQ Registre phytosanitaire</h2>
+    </div>
+    <div class="faq">
+      <details>
+        <summary>Comment l'appli sait-elle qu'un produit a été retiré ?</summary>
+        <p>Nous synchronisons régulièrement les données de la base officielle <strong>E-Phy (ANSES)</strong>. Si un produit est retiré, vous le voyez signalé avec le badge « RETIRÉ » sur chaque ligne de votre registre où vous l'avez utilisé.</p>
+      </details>
+      <details>
+        <summary>Que se passe-t-il si j'utilise un produit retiré sans le savoir ?</summary>
+        <p>L'usage d'un produit sans autorisation de mise sur le marché (AMM) est sanctionné, y compris de bonne foi — jusqu'à 150 000 € dans les cas les plus graves (art. L253-17 Code rural). Les retraits sont publiés par l'ANSES mais difficiles à suivre manuellement. Notre indicateur vous le signale AVANT un éventuel contrôle.</p>
+      </details>
+      <details>
+        <summary>Suis-je obligé de conserver les Fiches de Données de Sécurité (FDS) ?</summary>
+        <p>Oui. Le <strong>Règlement REACH (CE) 1907/2006</strong> impose à l'utilisateur professionnel de conserver les FDS de tous les produits chimiques et de les rendre disponibles lors d'un contrôle. Notre appli vous aide à les retrouver en 2 secondes.</p>
+      </details>
+      <details>
+        <summary>Dois-je tenir le registre même pour un petit vignoble familial ?</summary>
+        <p>Si vous utilisez des produits phytosanitaires professionnels (même seulement du cuivre et du soufre), <strong>oui</strong>. L'obligation s'applique indépendamment de la taille de l'exploitation, dès lors que vous êtes considéré comme utilisateur professionnel.</p>
+      </details>
+      <details>
+        <summary>Le registre imprimé depuis votre appli est-il valable en cas de contrôle ?</summary>
+        <p>Oui, il suit la structure attendue : toutes les colonnes requises (date, produit, quantité, surface, cible, opérateur, signature), une ligne par produit utilisé.</p>
+      </details>
+      <details>
+        <summary>Puis-je aussi enregistrer les fertilisations et autres travaux ?</summary>
+        <p>Bien sûr. En plus des traitements phytosanitaires (obligatoires), l'appli gère aussi les fertilisations, le travail du sol et la taille. Tout est classé par catégorie et imprimable.</p>
+      </details>
+      <details>
+        <summary>Combien d'années de registre puis-je conserver ?</summary>
+        <p>Toutes. L'appli ne supprime jamais les anciens traitements. Vous pouvez filtrer par année et imprimer le registre de n'importe quel millésime.</p>
+      </details>
+      <details>
+        <summary>Que faire si je me trompe dans une saisie ?</summary>
+        <p>Vous pouvez la modifier ou la supprimer à tout moment avant impression. Après impression, les corrections se font par rature et signature sur le papier, comme pour un registre traditionnel.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+  <div class="cta-final">
+    <h2>Gardez une longueur d'avance sur un contrôle</h2>
+    <p style="font-size: 1.1rem; margin-bottom: 14px;">5 jours gratuits. 49 €/an.</p>
+    <p style="font-size: 0.92rem; opacity: 0.85; margin-bottom: 24px;">Statut E-Phy · Alertes produits retirés · Recherche FDS · Impression conforme · IA multi-produits</p>
+    <a href="https://app-vigna.vercel.app?lang=fr" onclick="return gtag_report_conversion('https://app-vigna.vercel.app?lang=fr');" class="btn btn-primary btn-large">Commencer gratuitement 5 jours →</a>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="container">
+    <div style="border-top: 1px solid rgba(255,255,255,0.15); padding: 16px 0; margin-bottom: 16px;">
+      <p style="font-size: 0.78rem; color: #9ca3af; line-height: 1.6; text-align: center; margin: 0;">
+        ⚠️ Les informations présentes sur ce site ont un but exclusivement informatif. Elles ne remplacent pas l'avis d'un professionnel qualifié (technicien agricole, médecin du travail, conseiller en sécurité). Il Mio Vigneto décline toute responsabilité pour les dommages résultant de l'utilisation de ces informations.
+      </p>
+    </div>
+    <div class="footer-bottom" style="border: 0;">
+      <span>© 2026 Il Mio Vigneto</span>
+      <span><a href="index.html">Accueil</a> · <a href="prezzi.html">Tarifs</a> · <a href="blog.html">Blog</a></span>
+    </div>
+  </div>
+</footer>
+
+<div class="lang-modal-overlay" id="langModalOverlay" onclick="if (event.target === this) closeLangModal()">
+  <div class="lang-modal" role="dialog" aria-modal="true" aria-labelledby="langModalText">
+    <button type="button" class="lang-modal-close" onclick="closeLangModal()" aria-label="Fermer">×</button>
+    <p id="langModalText" class="lang-modal-text">Voulez-vous passer à la version italienne ?</p>
+    <div class="lang-modal-actions">
+      <a href="../quaderno-di-campagna.html" class="btn btn-primary">Oui, aller à la version italienne</a>
+      <button type="button" class="btn btn-secondary" onclick="closeLangModal()">Annuler</button>
+    </div>
+  </div>
+</div>
+<script>
+  function openLangModal(e) {
+    e.preventDefault();
+    document.getElementById('langModalOverlay').classList.add('open');
+    return false;
+  }
+  function closeLangModal() {
+    document.getElementById('langModalOverlay').classList.remove('open');
+  }
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') closeLangModal();
+  });
+</script>
+
+</body>
+</html>

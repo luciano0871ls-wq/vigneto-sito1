@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18183121570"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DYV8VWN3ND');
+  gtag('config', 'AW-18183121570');
+
+  function gtag_report_conversion(url) {
+    var callback = function () {
+      if (typeof(url) != 'undefined') {
+        window.location = url;
+      }
+    };
+    gtag('event', 'conversion', {
+        'send_to': 'AW-18183121570/864D-0272',
+        'event_callback': callback,
+        'event_timeout': 2000
+    });
+    return false;
+  }
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Certiphyto · Rappel d'échéance par email</title>
+<meta name="description" content="Ne soyez plus jamais pris au dépourvu par un Certiphyto expiré. Notre appli vous prévient par email 90 jours avant l'échéance. Gratuit et sans publicité.">
+<meta name="keywords" content="certiphyto renouvellement, échéance certiphyto, rappel certiphyto, certificat individuel professionnel phytopharmaceutique">
+<link rel="canonical" href="https://ilmiovigneto.it/fr/certiphyto.html">
+<link rel="alternate" hreflang="it" href="https://ilmiovigneto.it/tesserino-fitosanitario.html">
+<link rel="alternate" hreflang="fr" href="https://ilmiovigneto.it/fr/certiphyto.html">
+<link rel="alternate" hreflang="x-default" href="https://ilmiovigneto.it/tesserino-fitosanitario.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600;700;800&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
+<style>
+  .lang-switch { font-size: 0.82rem; opacity: 0.75; }
+  .lang-modal-overlay { display: none; position: fixed; inset: 0; background: rgba(17,20,17,0.55); z-index: 200; align-items: center; justify-content: center; padding: 20px; }
+  .lang-modal-overlay.open { display: flex; }
+  .lang-modal { background: var(--surface); border-radius: 16px; padding: 28px 26px; max-width: 360px; width: 100%; text-align: center; box-shadow: var(--shadow-strong); position: relative; }
+  .lang-modal-close { position: absolute; top: 10px; right: 12px; background: none; border: 0; cursor: pointer; font-size: 1.3rem; line-height: 1; color: var(--text-muted); padding: 4px 8px; border-radius: 8px; }
+  .lang-modal-close:hover { color: var(--text); background: var(--secondary); }
+  .lang-modal-text { font-family: 'Work Sans', sans-serif; font-weight: 700; font-size: 1.05rem; color: var(--text); margin-bottom: 20px; }
+  .lang-modal-actions { display: flex; flex-direction: column; gap: 10px; }
+  .lang-modal-actions .btn { width: 100%; }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a href="index.html" class="logo">
+      <span class="logo-icon">🍇</span>
+      Il Mio Vigneto
+    </a>
+    <nav class="nav">
+      <a href="epi-phytosanitaires.html">EPI Phytosanitaires</a>
+      <a href="maladies-vigne.html">Maladies de la vigne</a>
+      <a href="registre-phytosanitaire.html">Registre phytosanitaire</a>
+      <a href="certiphyto.html">Certiphyto</a>
+      <a href="prezzi.html">Tarifs</a>
+      <a href="blog.html">Blog</a>
+      <a href="../tesserino-fitosanitario.html" class="lang-switch" onclick="return openLangModal(event)">IT</a>
+      <a href="https://app-vigna.vercel.app?lang=fr" onclick="return gtag_report_conversion('https://app-vigna.vercel.app?lang=fr');" class="btn-header-outline">Essai gratuit</a>
+      <a href="https://app-vigna.vercel.app?lang=fr" onclick="return gtag_report_conversion('https://app-vigna.vercel.app?lang=fr');" class="btn-header">Ouvrir l'appli</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container hero-grid">
+    <div class="fade-up">
+      <span class="hero-eyebrow">🆔 Rappel automatique</span>
+      <h1>Plus jamais de <span class="accent">Certiphyto expiré</span></h1>
+      <p class="hero-lead">Le Certiphyto est valable <strong>5 ans</strong>. Sans certificat valide, vous ne pouvez ni acheter ni utiliser de produits phytosanitaires. Renseignez la date une seule fois, l'appli vous prévient par email <strong>90 jours avant</strong>.</p>
+      <div class="hero-cta">
+        <a href="https://app-vigna.vercel.app?lang=fr" onclick="return gtag_report_conversion('https://app-vigna.vercel.app?lang=fr');" class="btn btn-primary btn-large">Activer le rappel</a>
+      </div>
+    </div>
+    <div class="hero-mockup fade-up">
+      <div class="phone">
+        <div class="phone-status"></div>
+        <div class="phone-screen">
+          <span class="phone-tag" style="background: var(--gold); color: var(--gold-dark);">⚠️ Alerte</span>
+          <div class="phone-title">Certiphyto bientôt expiré</div>
+          <div class="phone-sub">Plus que 87 jours</div>
+          <div class="phone-card">
+            <strong>Numéro :</strong> AB123456<br>
+            <strong>Échéance :</strong> 15 juillet 2026
+          </div>
+          <div class="phone-card">
+            Nous vous conseillons de vous inscrire à la formation de renouvellement sans attendre.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-title">
+      <span class="eyebrow">Qu'est-ce que c'est</span>
+      <h2>Le certificat individuel professionnel phytopharmaceutique</h2>
+      <p style="max-width: 760px;">Prévu par le <strong>Code rural et de la pêche maritime (art. L254-3)</strong>, le Certiphyto (CIPP) est obligatoire pour acheter et/ou utiliser des produits phytosanitaires à usage professionnel. Il est délivré via les <strong>DRAAF</strong> (démarche sur service-public.fr) et est valable <strong>5 ans</strong>, renouvelable via une formation avant son échéance.</p>
+    </div>
+    <div class="split">
+      <div class="visual">📅</div>
+      <div class="fade-up">
+        <h2>Les 3 choses que notre appli fait pour vous</h2>
+        <ul class="bullet-list">
+          <li><strong>Rappel automatique par email</strong> 90 jours avant l'échéance, pour avoir le temps de vous inscrire à la formation</li>
+          <li><strong>Alerte visuelle dans l'appli</strong> : badge jaune si moins de 90 jours restants, rouge si déjà expiré</li>
+          <li><strong>Archivage sécurisé</strong> : numéro de certificat, date d'échéance, organisme de délivrance. Tout au même endroit, toujours consultable</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section bg-vine">
+  <div class="container">
+    <div class="section-title">
+      <span class="eyebrow">Conséquences</span>
+      <h2>Ce qui se passe si votre Certiphyto est expiré</h2>
+    </div>
+    <div class="features">
+      <div class="feature-card">
+        <div class="feature-icon" style="background: var(--accent);">🚫</div>
+        <h3>Vous ne pouvez plus acheter</h3>
+        <p>Les distributeurs agréés sont tenus de vérifier votre Certiphyto. Sans certificat valide, ils ne peuvent rien vous vendre, pas même un sachet de cuivre.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon" style="background: var(--accent);">⚖️</div>
+        <h3>Sanctions prévues</h3>
+        <p>Des sanctions sont prévues pour l'usage de produits phytosanitaires sans certificat valide (Code rural, art. L254-3). Le montant doit être vérifié au cas par cas.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon" style="background: var(--accent);">📉</div>
+        <h3>Risque sur certaines aides</h3>
+        <p>L'accès à certaines aides de la PAC liées aux produits phytosanitaires peut nécessiter un Certiphyto valide. Sans certificat, votre dossier peut être compromis.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+  <div class="cta-final">
+    <h2>30 secondes pour être tranquille pendant 5 ans</h2>
+    <p>Ouvrez l'appli, allez dans Profil, indiquez la date d'échéance et votre email. C'est fait. Nous vous le rappelons au bon moment.</p>
+    <a href="https://app-vigna.vercel.app?lang=fr" onclick="return gtag_report_conversion('https://app-vigna.vercel.app?lang=fr');" class="btn btn-primary btn-large">Configurer maintenant →</a>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="container">
+    <div style="border-top: 1px solid rgba(255,255,255,0.15); padding: 16px 0; margin-bottom: 16px;">
+      <p style="font-size: 0.78rem; color: #9ca3af; line-height: 1.6; text-align: center; margin: 0;">
+        ⚠️ Les informations présentes sur ce site ont un but exclusivement informatif. Elles ne remplacent pas l'avis d'un professionnel qualifié (technicien agricole, médecin du travail, conseiller en sécurité). Il Mio Vigneto décline toute responsabilité pour les dommages résultant de l'utilisation de ces informations.
+      </p>
+    </div>
+    <div class="footer-bottom" style="border: 0;">
+      <span>© 2026 Il Mio Vigneto</span>
+      <span><a href="index.html">Accueil</a> · <a href="prezzi.html">Tarifs</a> · <a href="blog.html">Blog</a></span>
+    </div>
+  </div>
+</footer>
+
+<div class="lang-modal-overlay" id="langModalOverlay" onclick="if (event.target === this) closeLangModal()">
+  <div class="lang-modal" role="dialog" aria-modal="true" aria-labelledby="langModalText">
+    <button type="button" class="lang-modal-close" onclick="closeLangModal()" aria-label="Fermer">×</button>
+    <p id="langModalText" class="lang-modal-text">Voulez-vous passer à la version italienne ?</p>
+    <div class="lang-modal-actions">
+      <a href="../tesserino-fitosanitario.html" class="btn btn-primary">Oui, aller à la version italienne</a>
+      <button type="button" class="btn btn-secondary" onclick="closeLangModal()">Annuler</button>
+    </div>
+  </div>
+</div>
+<script>
+  function openLangModal(e) {
+    e.preventDefault();
+    document.getElementById('langModalOverlay').classList.add('open');
+    return false;
+  }
+  function closeLangModal() {
+    document.getElementById('langModalOverlay').classList.remove('open');
+  }
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') closeLangModal();
+  });
+</script>
+
+</body>
+</html>

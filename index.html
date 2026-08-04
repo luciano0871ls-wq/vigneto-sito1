@@ -36,6 +36,15 @@
   .sanzione-card .law { font-size: 0.78rem; color: #6b6b6b; font-style: italic; }
   .semaforo-demo { display: inline-flex; gap: 6px; align-items: center; margin-top: 12px; }
   .semaforo-dot { width: 14px; height: 14px; border-radius: 50%; border: 2px solid white; box-shadow: 0 0 0 1.5px rgba(0,0,0,.2); }
+  .lang-switch { font-size: 0.82rem; opacity: 0.75; }
+  .lang-modal-overlay { display: none; position: fixed; inset: 0; background: rgba(17,20,17,0.55); z-index: 200; align-items: center; justify-content: center; padding: 20px; }
+  .lang-modal-overlay.open { display: flex; }
+  .lang-modal { background: var(--surface); border-radius: 16px; padding: 28px 26px; max-width: 360px; width: 100%; text-align: center; box-shadow: var(--shadow-strong); position: relative; }
+  .lang-modal-close { position: absolute; top: 10px; right: 12px; background: none; border: 0; cursor: pointer; font-size: 1.3rem; line-height: 1; color: var(--text-muted); padding: 4px 8px; border-radius: 8px; }
+  .lang-modal-close:hover { color: var(--text); background: var(--secondary); }
+  .lang-modal-text { font-family: 'Work Sans', sans-serif; font-weight: 700; font-size: 1.05rem; color: var(--text); margin-bottom: 20px; }
+  .lang-modal-actions { display: flex; flex-direction: column; gap: 10px; }
+  .lang-modal-actions .btn { width: 100%; }
 </style>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-DYV8VWN3ND"></script>
@@ -50,6 +59,9 @@
             'linker': { 'domains': ['ilmiovigneto.it', 'www.ilmiovigneto.it', 'app-vigna.vercel.app'], 'accept_incoming': true }
           });
         </script>
+<link rel="alternate" hreflang="it" href="https://ilmiovigneto.it/index.html">
+<link rel="alternate" hreflang="fr" href="https://ilmiovigneto.it/fr/index.html">
+<link rel="alternate" hreflang="x-default" href="https://ilmiovigneto.it/index.html">
 </head>
 <body>
 
@@ -66,6 +78,7 @@
       <a href="tesserino-fitosanitario.html">Tesserino</a>
       <a href="prezzi.html">Prezzi</a>
       <a href="blog.html">Blog</a>
+      <a href="fr/index.html" class="lang-switch" onclick="return openLangModal(event)">FR</a>
       <a href="https://app-vigna.vercel.app" class="btn btn-primary btn-large">Prova gratis 5 giorni →</a>
       <a href="https://app-vigna.vercel.app" class="btn btn-primary btn-large">Prova gratis 5 giorni →</a>
     </nav>
@@ -422,9 +435,9 @@
           Se hai un'idea per un'app, un sito web o uno strumento digitale per la tua attività, contattami — troveremo insieme la soluzione giusta.
         </p>
         <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
-          <a href="mailto:luciano0871l.s@gmail.com" style="display: inline-flex; align-items: center; gap: 10px; background: white; color: #1a3a0a; padding: 14px 24px; border-radius: 12px; font-weight: 700; font-size: 0.95rem; text-decoration: none;">
+          <a href="mailto:info@ilmiovigneto.it" style="display: inline-flex; align-items: center; gap: 10px; background: white; color: #1a3a0a; padding: 14px 24px; border-radius: 12px; font-weight: 700; font-size: 0.95rem; text-decoration: none;">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg>
-            luciano0871l.s@gmail.com
+            info@ilmiovigneto.it
           </a>
           <a href="https://wa.me/393385843051" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 10px; background: #25D366; color: white; padding: 14px 24px; border-radius: 12px; font-weight: 700; font-size: 0.95rem; text-decoration: none;">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
@@ -496,6 +509,30 @@
     </div>
   </div>
 </footer>
+
+<div class="lang-modal-overlay" id="langModalOverlay" onclick="if (event.target === this) closeLangModal()">
+  <div class="lang-modal" role="dialog" aria-modal="true" aria-labelledby="langModalText">
+    <button type="button" class="lang-modal-close" onclick="closeLangModal()" aria-label="Chiudi">×</button>
+    <p id="langModalText" class="lang-modal-text">Vuoi passare alla versione francese?</p>
+    <div class="lang-modal-actions">
+      <a href="fr/index.html" class="btn btn-primary">Sì, vai alla versione francese</a>
+      <button type="button" class="btn btn-secondary" onclick="closeLangModal()">Annulla</button>
+    </div>
+  </div>
+</div>
+<script>
+  function openLangModal(e) {
+    e.preventDefault();
+    document.getElementById('langModalOverlay').classList.add('open');
+    return false;
+  }
+  function closeLangModal() {
+    document.getElementById('langModalOverlay').classList.remove('open');
+  }
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') closeLangModal();
+  });
+</script>
 
 </body>
 </html>
