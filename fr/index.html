@@ -1,0 +1,534 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Il Mio Vigneto · Catalogue E-Phy, Alertes Retraits, Diagnostic IA · App Écophyto pour viticulteurs</title>
+<meta name="description" content="L'app synchronisée avec la base officielle E-Phy (ANSES). Alertes automatiques sur les produits retirés, recherche des Fiches de Données de Sécurité (FDS), registre phytosanitaire numérique. Restez conforme facilement.">
+<meta name="keywords" content="base E-Phy ANSES produits phytosanitaires, produits phytosanitaires retirés, fiches de données de sécurité FDS vigne, registre phytosanitaire numérique, certiphyto rappel échéance, maladies de la vigne, mildiou, oïdium, plan écophyto">
+<meta property="og:title" content="Il Mio Vigneto · L'app pour le viticulteur moderne">
+<meta property="og:description" content="Base E-Phy (ANSES) + alertes produits retirés + recherche FDS. Restez conforme sans effort.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://ilmiovigneto.it/fr/">
+<link rel="canonical" href="https://ilmiovigneto.it/fr/">
+<link rel="alternate" hreflang="it" href="https://ilmiovigneto.it/index.html">
+<link rel="alternate" hreflang="fr" href="https://ilmiovigneto.it/fr/index.html">
+<link rel="alternate" hreflang="x-default" href="https://ilmiovigneto.it/index.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600;700;800&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
+<style>
+  .urgency-banner { background: linear-gradient(90deg, #b91c1c, #dc2626); color: white; padding: 12px 0; font-size: 0.92rem; }
+  .urgency-content { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; justify-content: center; text-align: center; }
+  .urgency-content a { color: #fff; text-decoration: underline; font-weight: 700; }
+  .urgency-icon { font-size: 1.2rem; }
+  .novita-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px,1fr)); gap: 20px; margin-top: 32px; }
+  .novita-card { background: white; border: 2px solid #e6ebe2; border-radius: 16px; padding: 24px; position: relative; transition: transform .2s, box-shadow .2s; }
+  .novita-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,0,0,0.08); }
+  .badge-new { position: absolute; top: -10px; right: 16px; background: #f59e0b; color: white; font-size: 0.7rem; font-weight: 800; padding: 4px 10px; border-radius: 999px; letter-spacing: .1em; }
+  .novita-card .icon { font-size: 2.4rem; margin-bottom: 14px; }
+  .novita-card h3 { font-size: 1.15rem; font-weight: 800; margin-bottom: 10px; color: #1a3a0a; }
+  .novita-card p { color: #4b5050; font-size: 0.95rem; line-height: 1.55; }
+  .bg-warning { background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); }
+  .sanzioni { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px,1fr)); gap: 18px; margin-top: 28px; }
+  .sanzione-card { background: white; border-left: 5px solid #dc2626; border-radius: 12px; padding: 22px; box-shadow: 0 2px 8px rgba(0,0,0,.04); }
+  .sanzione-card .amount { font-size: 1.8rem; font-weight: 900; color: #b91c1c; line-height: 1; margin-bottom: 6px; }
+  .sanzione-card .label { font-size: 0.75rem; font-weight: 700; color: #6b6b6b; text-transform: uppercase; letter-spacing: .12em; margin-bottom: 14px; }
+  .sanzione-card .reason { font-size: 0.95rem; color: #1a1a1a; font-weight: 500; line-height: 1.45; margin-bottom: 8px; }
+  .sanzione-card .law { font-size: 0.78rem; color: #6b6b6b; font-style: italic; }
+  .semaforo-demo { display: inline-flex; gap: 6px; align-items: center; margin-top: 12px; }
+  .semaforo-dot { width: 14px; height: 14px; border-radius: 50%; border: 2px solid white; box-shadow: 0 0 0 1.5px rgba(0,0,0,.2); }
+  .lang-switch { font-size: 0.82rem; opacity: 0.75; }
+  .lang-modal-overlay { display: none; position: fixed; inset: 0; background: rgba(17,20,17,0.55); z-index: 200; align-items: center; justify-content: center; padding: 20px; }
+  .lang-modal-overlay.open { display: flex; }
+  .lang-modal { background: var(--surface); border-radius: 16px; padding: 28px 26px; max-width: 360px; width: 100%; text-align: center; box-shadow: var(--shadow-strong); position: relative; }
+  .lang-modal-close { position: absolute; top: 10px; right: 12px; background: none; border: 0; cursor: pointer; font-size: 1.3rem; line-height: 1; color: var(--text-muted); padding: 4px 8px; border-radius: 8px; }
+  .lang-modal-close:hover { color: var(--text); background: var(--secondary); }
+  .lang-modal-text { font-family: 'Work Sans', sans-serif; font-weight: 700; font-size: 1.05rem; color: var(--text); margin-bottom: 20px; }
+  .lang-modal-actions { display: flex; flex-direction: column; gap: 10px; }
+  .lang-modal-actions .btn { width: 100%; }
+</style>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DYV8VWN3ND"></script>
+<script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-DYV8VWN3ND', {
+            'linker': { 'domains': ['ilmiovigneto.it', 'www.ilmiovigneto.it', 'app-vigna.vercel.app'], 'accept_incoming': true }
+          });
+          gtag('config', 'AW-18183121570', {
+            'linker': { 'domains': ['ilmiovigneto.it', 'www.ilmiovigneto.it', 'app-vigna.vercel.app'], 'accept_incoming': true }
+          });
+        </script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a href="index.html" class="logo">
+      <span class="logo-icon">🍇</span>
+      Il Mio Vigneto
+    </a>
+    <nav class="nav" id="nav">
+      <a href="epi-phytosanitaires.html">EPI Phytosanitaires</a>
+      <a href="maladies-vigne.html">Maladies de la vigne</a>
+      <a href="registre-phytosanitaire.html">Registre phytosanitaire</a>
+      <a href="certiphyto.html">Certiphyto</a>
+      <a href="prezzi.html">Tarifs</a>
+      <a href="blog.html">Blog</a>
+      <a href="../index.html" class="lang-switch" onclick="return openLangModal(event)">IT</a>
+      <a href="https://app-vigna.vercel.app?lang=fr" class="btn btn-primary btn-large">Essai gratuit 5 jours →</a>
+      <a href="https://app-vigna.vercel.app?lang=fr" class="btn btn-primary btn-large">Essai gratuit 5 jours →</a>
+    </nav>
+    <button class="menu-toggle" onclick="document.getElementById('nav').classList.toggle('open')" aria-label="Menu">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </div>
+</header>
+
+<div class="urgency-banner">
+  <div class="container urgency-content">
+    <span class="urgency-icon">⚠️</span>
+    <span><strong>À savoir :</strong> le registre phytosanitaire numérique devient obligatoire au 1er janvier 2027 (nouvelles mentions déjà exigées sur papier depuis le 1er janvier 2026). <a href="#novita">Voir comment vous mettre en conformité →</a></span>
+  </div>
+</div>
+
+<section class="hero">
+  <div class="container hero-grid">
+    <div class="fade-up">
+      <span class="hero-eyebrow">🌿 L'IA pour le viticulteur · Aligné sur la stratégie Écophyto</span>
+      <h1>La seule appli qui vous alerte quand un produit phytosanitaire est <span class="accent">retiré du marché</span>.</h1>
+      <p class="hero-lead">Synchronisée avec la base officielle <strong>E-Phy (ANSES)</strong>. Elle vous signale les produits retirés, vous aide à retrouver les <strong>Fiches de Données de Sécurité (FDS)</strong>, reconnaît les maladies à partir d'une photo grâce à l'IA, et tient votre registre phytosanitaire à votre place.</p>
+      <div class="hero-cta">
+        <a href="https://app-vigna.vercel.app?lang=fr" class="btn btn-primary btn-large">Essai gratuit 5 jours →</a>
+        <a href="#come-funziona" class="btn btn-secondary btn-large">Comment ça marche</a>
+      </div>
+      <div class="hero-trust">
+        <span><span class="dot">●</span> Synchronisé avec E-Phy (ANSES)</span>
+        <span><span class="dot">●</span> Aligné sur le Code rural et Écophyto</span>
+        <span><span class="dot">●</span> Conçu par un viticulteur</span>
+      </div>
+    </div>
+    <div class="hero-mockup fade-up">
+      <div class="phone">
+        <div class="phone-status"></div>
+        <div class="phone-screen">
+          <span class="phone-tag">Diagnostic IA</span>
+          <div class="phone-title">Mildiou</div>
+          <div class="phone-sub">Confiance : 94% · Plasmopara viticola</div>
+          <div class="phone-card">
+            <strong>Symptômes détectés :</strong><br>
+            Taches d'huile jaunâtres sur la face supérieure de la feuille, feutrage blanchâtre en dessous.
+          </div>
+          <div class="phone-card">
+            <strong>Traitement conseillé :</strong><br>
+            Consultez l'étiquette du produit à base de cuivre autorisé pour votre exploitation. Respectez le délai avant récolte indiqué.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="novita" style="background: linear-gradient(180deg, #f8faf6 0%, #fff 100%);">
+  <div class="container">
+    <div class="section-title">
+      <span class="eyebrow" style="color: #f59e0b;">🆕 À savoir</span>
+      <h2>6 fonctions que peu d'outils proposent</h2>
+      <p>Pendant que d'autres vous vendent juste un registre numérique, nous avons construit de vrais outils de prévention. Pour rester à l'écart des non-conformités, l'esprit tranquille.</p>
+    </div>
+    <div class="novita-grid">
+      <div class="novita-card">
+        <span class="badge-new">NOUVEAU</span>
+        <div class="icon">🏛️</div>
+        <h3>Base E-Phy intégrée</h3>
+        <p>Nous synchronisons régulièrement les données de la base officielle <strong>E-Phy (ANSES)</strong>. Toujours à jour, toujours alignée sur la réglementation en vigueur.</p>
+      </div>
+      <div class="novita-card">
+        <span class="badge-new">NOUVEAU</span>
+        <div class="icon">🚦</div>
+        <h3>Statut de conformité sur chaque traitement</h3>
+        <p>Un indicateur coloré à côté de chaque produit du registre : 🟢 autorisé, 🟡 en fin de validité, 🔴 retiré. Vous voyez d'un coup d'œil où vous en êtes.</p>
+        <div class="semaforo-demo">
+          <span class="semaforo-dot" style="background:#22c55e"></span>
+          <span class="semaforo-dot" style="background:#f59e0b"></span>
+          <span class="semaforo-dot" style="background:#dc2626"></span>
+          <span style="font-size:.8rem;color:#6b6b6b;margin-left:6px;">exemple réel</span>
+        </div>
+      </div>
+      <div class="novita-card">
+        <span class="badge-new">NOUVEAU</span>
+        <div class="icon">⚠️</div>
+        <h3>Alertes produits retirés en temps réel</h3>
+        <p>Si un produit que vous avez utilisé est retiré, vous le voyez <strong>immédiatement</strong> signalé en rouge dans votre registre. Plus de mauvaise surprise lors d'un contrôle.</p>
+      </div>
+      <div class="novita-card">
+        <span class="badge-new">NOUVEAU</span>
+        <div class="icon">📄</div>
+        <h3>Recherche des Fiches de Données de Sécurité (FDS)</h3>
+        <p>Pour chaque produit, un bouton recherche automatiquement la <strong>FDS officielle</strong> du fabricant. Vous devez la conserver dans votre exploitation — retrouvez-la en 2 secondes.</p>
+      </div>
+      <div class="novita-card">
+        <span class="badge-new">NOUVEAU</span>
+        <div class="icon">🤖</div>
+        <h3>IA multi-produits</h3>
+        <p>Écrivez <em>« aujourd'hui cuivre et soufre sur toutes les parcelles »</em> → l'IA crée <strong>2 lignes distinctes</strong> dans le registre, une par produit. Fini les mélanges mal résumés.</p>
+      </div>
+      <div class="novita-card">
+        <span class="badge-new">NOUVEAU</span>
+        <div class="icon">🔍</div>
+        <h3>Catalogue consultable depuis l'appli</h3>
+        <p>Vous voulez savoir si un produit est toujours autorisé avant de l'acheter ? Recherchez son nom et retrouvez immédiatement son statut, sa substance active et sa date de retrait éventuelle.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="funzioni">
+  <div class="container">
+    <div class="section-title">
+      <span class="eyebrow">Ce que fait l'appli</span>
+      <h2>Trois outils, un viticulteur plus serein</h2>
+      <p>Pensée pour ceux qui travaillent au vignoble, pas au bureau. Gros boutons, langage clair, pas de menus compliqués.</p>
+    </div>
+    <div class="features">
+      <div class="feature-card fade-up">
+        <div class="feature-icon">📷</div>
+        <h3>Diagnostic des maladies par IA</h3>
+        <p>Photographiez une feuille ou une grappe, et en 3 secondes vous savez de quelle maladie il s'agit et comment la traiter. Reconnaît mildiou, oïdium, botrytis, esca, flavescence dorée et d'autres.</p>
+        <a href="maladies-vigne.html" class="more">Découvrir →</a>
+      </div>
+      <div class="feature-card fade-up">
+        <div class="feature-icon">📒</div>
+        <h3>Registre phytosanitaire</h3>
+        <p>Enregistrez traitements et fertilisations. Imprimez le registre officiel à tout moment. Avec statut E-Phy et alertes produits retirés sur chaque ligne.</p>
+        <a href="registre-phytosanitaire.html" class="more">Découvrir →</a>
+      </div>
+      <div class="feature-card fade-up">
+        <div class="feature-icon">🆔</div>
+        <h3>Certiphyto</h3>
+        <p>Renseignez votre date d'échéance une seule fois, et nous vous prévenons par email <strong>90 jours avant</strong>. Ne soyez plus jamais pris au dépourvu à l'achat de produits phytosanitaires.</p>
+        <a href="certiphyto.html" class="more">Découvrir →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section bg-warning">
+  <div class="container">
+    <div class="section-title">
+      <span class="eyebrow" style="color: #b91c1c;">⚖️ Les risques réels en cas de non-conformité</span>
+      <h2>Une seule inattention peut coûter cher</h2>
+      <p>Les contrôles sur les exploitations agricoles ne cessent d'augmenter. Voici ce que vous risquez en cas de manquement. <strong>Ces risques sont considérablement réduits avec Il Mio Vigneto Premium.</strong></p>
+    </div>
+    <div class="sanzioni">
+      <div class="sanzione-card">
+        <div class="label">Utilisation d'un produit sans AMM</div>
+        <div class="amount">Jusqu'à 150 000 €</div>
+        <div class="reason">Utilisation d'un produit phytopharmaceutique ne bénéficiant pas d'une autorisation de mise sur le marché (AMM), y compris un produit retiré.</div>
+        <div class="law">Code rural et de la pêche maritime, art. L253-17</div>
+      </div>
+      <div class="sanzione-card">
+        <div class="label">Registre manquant ou incomplet</div>
+        <div class="amount">Sanctions prévues</div>
+        <div class="reason">Absence de tenue du registre phytosanitaire, ou informations manquantes (date, produit, quantité, surface, opérateur). Montant à vérifier selon la nature du manquement.</div>
+        <div class="law">Arrêté du 24 décembre 2025</div>
+      </div>
+      <div class="sanzione-card">
+        <div class="label">Fiches de Données de Sécurité (FDS) non disponibles</div>
+        <div class="amount">Sanctions prévues</div>
+        <div class="reason">L'utilisateur professionnel doit conserver les FDS de tous les produits utilisés et les présenter lors d'un contrôle. Montant à vérifier selon la nature du manquement.</div>
+        <div class="law">Règlement (CE) REACH 1907/2006</div>
+      </div>
+      <div class="sanzione-card">
+        <div class="label">Certiphyto expiré</div>
+        <div class="amount">Sanctions prévues</div>
+        <div class="reason">Achat ou usage de produits phytosanitaires sans certificat individuel valide. Renouvellement à effectuer tous les 5 ans.</div>
+        <div class="law">Code rural et de la pêche maritime, art. L254-3</div>
+      </div>
+    </div>
+    <div style="text-align: center; margin-top: 36px; max-width: 700px; margin-left: auto; margin-right: auto;">
+      <p style="font-size: 1.15rem; color: #1a1a1a; margin-bottom: 20px;">
+        <strong>Combien coûte Il Mio Vigneto Premium ?</strong> 49 € par an.
+      </p>
+      <a href="https://app-vigna.vercel.app?lang=fr" class="btn btn-primary btn-large">Mettez-vous en conformité gratuitement pendant 5 jours →</a>
+    </div>
+  </div>
+</section>
+
+<section class="section bg-vine" id="come-funziona">
+  <div class="container">
+    <div class="section-title">
+      <span class="eyebrow">En 3 étapes</span>
+      <h2>Comment fonctionne le diagnostic IA</h2>
+      <p>Plus rapide que d'appeler un technicien. Plus fiable que de demander conseil au café du village.</p>
+    </div>
+    <div class="steps">
+      <div class="step fade-up">
+        <h3>Prenez la photo</h3>
+        <p>Cadrez la feuille, la grappe ou le rameau suspect. Même de loin, notre IA parvient à reconnaître les symptômes.</p>
+      </div>
+      <div class="step fade-up">
+        <h3>Recevez le diagnostic</h3>
+        <p>En 3 secondes, vous voyez le nom de la maladie, le niveau de confiance, les symptômes détectés et la gravité.</p>
+      </div>
+      <div class="step fade-up">
+        <h3>Suivez le traitement</h3>
+        <p>L'appli vous oriente vers la substance active adaptée et le délai avant récolte à respecter — toujours en vous renvoyant à l'étiquette du produit.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="split">
+      <div class="visual">📋</div>
+      <div class="fade-up">
+        <span class="hero-eyebrow">Registre phytosanitaire</span>
+        <h2>En règle, sans une feuille de papier</h2>
+        <p>Le <strong>Code rural</strong> et la stratégie <strong>Écophyto</strong> imposent à chaque viticulteur de tenir un registre des traitements phytosanitaires. Notre appli le gère à votre place, avec des outils de prévention que peu d'autres proposent.</p>
+        <ul class="bullet-list">
+          <li><strong>🚦 Statut E-Phy</strong> sur chaque ligne : vérifiez immédiatement si les produits utilisés sont toujours autorisés</li>
+          <li><strong>⚠️ Alerte RETRAIT</strong> automatique si un produit est retiré du marché</li>
+          <li><strong>🤖 IA multi-produits</strong> : écrivez « cuivre et soufre sur toutes les parcelles » → l'appli crée 2 lignes distinctes</li>
+          <li>Impression conforme avec toutes les colonnes requises (date, produit, quantité, surface, cible, opérateur, signature)</li>
+          <li>Gestion multi-parcelles avec surfaces précises (m², ares, hectares)</li>
+          <li>Recherche des <strong>Fiches de Données de Sécurité (FDS)</strong> directement depuis le registre</li>
+        </ul>
+        <a href="registre-phytosanitaire.html" class="btn btn-secondary" style="margin-top: 24px;">En savoir plus →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section bg-vine">
+  <div class="container">
+    <div class="split split-reverse">
+      <div class="visual">🛰️</div>
+      <div class="fade-up">
+        <span class="hero-eyebrow">Carte satellite</span>
+        <h2>Vos parcelles, vues du ciel</h2>
+        <p>Pas de coordonnées à saisir. Ouvrez la carte satellite à jour, cherchez la commune, touchez l'emplacement de votre vignoble. C'est fait.</p>
+        <ul class="bullet-list">
+          <li>Images satellite Google et Esri haute résolution</li>
+          <li>Accès direct à votre position GPS</li>
+          <li>Plusieurs parcelles, chacune avec cépage, année de plantation, stade phénologique</li>
+          <li>Météo locale et risque de mildiou calculé sur vos parcelles</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="prezzi">
+  <div class="container">
+    <div class="section-title">
+      <span class="eyebrow">Tarifs</span>
+      <h2>Choisissez votre formule</h2>
+      <p>Essai gratuit de 5 jours. Quand vous ne pourrez plus vous en passer, passez à Premium.</p>
+    </div>
+    <div class="pricing">
+      <div class="price-card">
+        <div class="price-name">Essai gratuit</div>
+        <p>5 jours, sans carte bancaire</p>
+        <div class="price-amount">0 €<small> / 5 jours</small></div>
+        <ul class="price-list">
+          <li>Toutes les fonctions Premium</li>
+          <li>Diagnostics IA illimités</li>
+          <li>Registre phytosanitaire complet</li>
+          <li>Impression du registre</li>
+          <li>Rappel Certiphyto</li>
+        </ul>
+        <a href="https://app-vigna.vercel.app?lang=fr" class="btn btn-secondary" style="width: 100%;">Commencer l'essai →</a>
+      </div>
+      <div class="price-card featured">
+        <div class="price-name">Premium</div>
+        <p>Pour le viticulteur qui va jusqu'au bout</p>
+        <div class="price-amount">49 €<small> / an</small></div>
+        <p style="color: var(--accent); font-weight: 600; font-size: 0.95rem; margin: 4px 0 16px;">La conformité qui vous protège</p>
+        <ul class="price-list">
+          <li><strong>Base E-Phy + alertes produits retirés</strong></li>
+          <li><strong>Parcelles illimitées</strong></li>
+          <li><strong>Diagnostics IA illimités</strong></li>
+          <li>Registre avec statut de conformité</li>
+          <li>Recherche des Fiches de Données de Sécurité (FDS)</li>
+          <li>Rappel d'échéance Certiphyto</li>
+          <li>Saisie IA multi-produits</li>
+          <li>Forum privé + support par email</li>
+        </ul>
+        <a href="https://app-vigna.vercel.app?lang=fr" class="btn btn-primary" style="width: 100%;">Essai gratuit 5 jours →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section bg-vine">
+  <div class="container">
+    <div class="section-title">
+      <span class="eyebrow">Questions fréquentes</span>
+      <h2>Tout ce qu'il faut savoir</h2>
+    </div>
+    <div class="faq">
+      <details>
+        <summary>L'appli reconnaît-elle vraiment les maladies à partir d'une photo ?</summary>
+        <p>Oui. Nous utilisons Gemini 2.0, une intelligence artificielle de Google entraînée sur des millions d'images agricoles. Elle reconnaît avec 90 à 95% de précision les principales maladies de la vigne (mildiou, oïdium, botrytis, esca, flavescence dorée). Pour les cas incertains, nous conseillons toujours de consulter un technicien agricole.</p>
+      </details>
+      <details>
+        <summary>Le registre imprimé depuis l'appli est-il valable en cas de contrôle ?</summary>
+        <p>Le registre suit la structure attendue pour un registre phytosanitaire : date, nom commercial du produit, quantité utilisée, surface traitée, cible du traitement, nom de l'opérateur et signature. La signature est apposée à la main après impression, comme pour un registre papier.</p>
+      </details>
+      <details>
+        <summary>Comment l'appli sait-elle qu'un produit a été retiré ?</summary>
+        <p>Nous synchronisons régulièrement les données de la base officielle <strong>E-Phy (ANSES)</strong>. Si un produit que vous utilisez est retiré, vous le voyez signalé en rouge dans votre registre avec la mention « RETRAIT ». Vous restez aligné sur la réglementation en vigueur.</p>
+      </details>
+      <details>
+        <summary>Suis-je obligé de conserver les Fiches de Données de Sécurité (FDS) ?</summary>
+        <p>Le Règlement REACH (CE) 1907/2006 impose à l'utilisateur professionnel de conserver les FDS de tous les produits chimiques utilisés (y compris les produits phytosanitaires) et de les présenter lors d'un contrôle. L'appli vous aide à retrouver rapidement la FDS officielle de chaque produit que vous utilisez.</p>
+      </details>
+      <details>
+        <summary>Que se passe-t-il si j'utilise un produit retiré sans le savoir ?</summary>
+        <p>L'utilisation d'un produit sans autorisation de mise sur le marché (AMM) est sanctionnée, y compris de bonne foi (jusqu'à 150 000 € selon l'art. L253-17 du Code rural pour les cas les plus graves). Les retraits sont publiés par l'ANSES mais il est difficile de s'y retrouver manuellement. C'est pour cela que nous avons créé l'indicateur de statut : vous êtes prévenu AVANT un éventuel contrôle.</p>
+      </details>
+      <details>
+        <summary>Dois-je être à l'aise avec la technologie pour l'utiliser ?</summary>
+        <p>Absolument pas. L'appli est conçue pour ceux qui travaillent à la vigne, pas pour des informaticiens. Gros boutons, textes clairs, et une aide intégrée. Si vous savez envoyer un message, vous savez utiliser Il Mio Vigneto.</p>
+      </details>
+      <details>
+        <summary>Puis-je l'utiliser sans connexion internet ?</summary>
+        <p>Pour consulter vos données déjà enregistrées, oui. Pour le diagnostic IA et la synchronisation, une connexion internet est nécessaire, même faible.</p>
+      </details>
+      <details>
+        <summary>Mes données sont-elles en sécurité ?</summary>
+        <p>Oui. Les données sont stockées sur des serveurs chiffrés conformes au RGPD. Nous ne partageons rien avec des tiers, et vous pouvez tout supprimer quand vous le souhaitez.</p>
+      </details>
+      <details>
+        <summary>Puis-je essayer avant de payer ?</summary>
+        <p>Bien sûr. Vous avez 5 jours gratuits avec toutes les fonctions Premium. Ensuite, vous passez à Premium en un clic pour seulement 49 €/an.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="about-founder">
+      <div class="about-avatar">🧑‍🌾</div>
+      <div class="about-content fade-up">
+        <span class="eyebrow" style="color: var(--accent); font-weight: 800; font-size: 0.82rem; letter-spacing: 0.16em; text-transform: uppercase; display: block; margin-bottom: 14px;">Qui est derrière l'appli</span>
+        <h2>Fait par un viticulteur, pour les viticulteurs</h2>
+        <p style="font-size: 1.1rem; margin-bottom: 18px;">Je m'appelle <strong style="color: var(--text);">Luciano S.</strong> et je travaille à la vigne depuis des années. J'ai créé Il Mio Vigneto parce que je connais bien la frustration de gérer des registres papier, de devoir se souvenir des échéances du certificat, et de comprendre rapidement ce qui attaque les feuilles.</p>
+        <p style="font-size: 1.05rem; margin-bottom: 18px;">J'ai construit cette appli avec un objectif simple : <strong style="color: var(--text);">retirer la paperasse et la complexité du travail à la vigne</strong>, pour que vous puissiez vous concentrer sur ce qui compte vraiment — votre vignoble.</p>
+        <p style="font-size: 1.05rem;">Ce n'est pas une appli faite par une grande entreprise qui n'a jamais touché une feuille de vigne. C'est l'outil que j'aurais aimé avoir, construit avec la même passion que je mets à la vigne chaque jour.</p>
+        <div class="about-signature">— Luciano</div>
+      </div>
+    </div>
+
+    <div style="margin-top: 56px; background: linear-gradient(135deg, #1a3a0a 0%, #2d5a1b 100%); border-radius: 20px; padding: 40px; color: white;">
+      <div style="max-width: 620px; margin: 0 auto; text-align: center;">
+        <div style="font-size: 2.5rem; margin-bottom: 12px;">💻</div>
+        <h3 style="font-size: 1.6rem; font-weight: 800; margin-bottom: 12px; color: white;">Besoin d'une appli ou d'un site web ?</h3>
+        <p style="font-size: 1.05rem; color: rgba(255,255,255,0.85); margin-bottom: 32px; line-height: 1.7;">
+          Si vous avez une idée d'appli, de site web ou d'outil numérique pour votre activité, contactez-moi — nous trouverons ensemble la bonne solution.
+        </p>
+        <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+          <a href="mailto:info@ilmiovigneto.it" style="display: inline-flex; align-items: center; gap: 10px; background: white; color: #1a3a0a; padding: 14px 24px; border-radius: 12px; font-weight: 700; font-size: 0.95rem; text-decoration: none;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg>
+            info@ilmiovigneto.it
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+  <div class="cta-final">
+    <h2>Gardez une longueur d'avance sur un contrôle</h2>
+    <p style="font-size: 1.1rem; margin-bottom: 14px;">5 jours gratuits. 49 €/an.</p>
+    <p style="font-size: 0.92rem; opacity: 0.85; margin-bottom: 24px;">Base E-Phy · Alertes produits retirés · FDS · Registre phytosanitaire · Diagnostic IA · Certiphyto</p>
+    <a href="https://app-vigna.vercel.app?lang=fr" class="btn btn-primary btn-large">Essai gratuit 5 jours →</a>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a href="index.html" class="logo" style="color: white;">
+          <span class="logo-icon">🍇</span>
+          Il Mio Vigneto
+        </a>
+        <p style="margin-top: 14px; color: #c5cac3; font-size: 0.9rem;">L'appli pour la viticulture intelligente. Base E-Phy, alertes produits retirés, diagnostic IA, registre phytosanitaire.</p>
+      </div>
+      <div>
+        <h4>Fonctions</h4>
+        <ul>
+          <li><a href="maladies-vigne.html">Diagnostic des maladies</a></li>
+          <li><a href="registre-phytosanitaire.html">Registre phytosanitaire</a></li>
+          <li><a href="certiphyto.html">Certiphyto</a></li>
+          <li><a href="prezzi.html">Tarifs</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Ressources</h4>
+        <ul>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="mildiou-vigne.html">Guide du mildiou</a></li>
+          <li><a href="registre-phytosanitaire-2027.html">Registre phytosanitaire 2027</a></li>
+          <li><a href="epi-phytosanitaires.html">EPI Phytosanitaires</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="https://app-vigna.vercel.app/suggerimenti?lang=fr">Envoyer une suggestion</a></li>
+          <li><a href="https://app-vigna.vercel.app?lang=fr">Ouvrir l'appli</a></li>
+        </ul>
+      </div>
+    </div>
+    <div style="border-top: 1px solid rgba(255,255,255,0.15); padding: 16px 0; margin-bottom: 16px;">
+      <p style="font-size: 0.78rem; color: #9ca3af; line-height: 1.6; text-align: center; margin: 0;">
+        ⚠️ Les informations présentes sur ce site ont un but exclusivement informatif. Elles ne remplacent pas l'avis d'un professionnel qualifié (technicien agricole, médecin du travail, conseiller en sécurité). Il Mio Vigneto décline toute responsabilité pour les dommages résultant de l'utilisation de ces informations.
+      </p>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Il Mio Vigneto · Tous droits réservés</span>
+      <span>
+        <a href="#" style="margin-right: 14px;">Confidentialité</a>
+        <a href="#" style="margin-right: 14px;">Conditions</a>
+        <a href="#">Cookies</a>
+      </span>
+    </div>
+  </div>
+</footer>
+
+<div class="lang-modal-overlay" id="langModalOverlay" onclick="if (event.target === this) closeLangModal()">
+  <div class="lang-modal" role="dialog" aria-modal="true" aria-labelledby="langModalText">
+    <button type="button" class="lang-modal-close" onclick="closeLangModal()" aria-label="Fermer">×</button>
+    <p id="langModalText" class="lang-modal-text">Voulez-vous passer à la version italienne ?</p>
+    <div class="lang-modal-actions">
+      <a href="../index.html" class="btn btn-primary">Oui, aller à la version italienne</a>
+      <button type="button" class="btn btn-secondary" onclick="closeLangModal()">Annuler</button>
+    </div>
+  </div>
+</div>
+<script>
+  function openLangModal(e) {
+    e.preventDefault();
+    document.getElementById('langModalOverlay').classList.add('open');
+    return false;
+  }
+  function closeLangModal() {
+    document.getElementById('langModalOverlay').classList.remove('open');
+  }
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') closeLangModal();
+  });
+</script>
+
+</body>
+</html>
