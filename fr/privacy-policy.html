@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18183121570"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DYV8VWN3ND');
+  gtag('config', 'AW-18183121570');
+
+  function gtag_report_conversion(url) {
+    var callback = function () {
+      if (typeof(url) != 'undefined') {
+        window.location = url;
+      }
+    };
+    gtag('event', 'conversion', {
+        'send_to': 'AW-18183121570/864D-0272',
+        'event_callback': callback,
+        'event_timeout': 2000
+    });
+    return false;
+  }
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Politique de Confidentialité · Il Mio Vigneto</title>
+<meta name="description" content="Politique de confidentialité de Il Mio Vigneto / Mon Vignoble : données collectées, finalités, bases juridiques, sous-traitants et droits de l'utilisateur.">
+<link rel="canonical" href="https://ilmiovigneto.it/fr/privacy-policy.html">
+<link rel="alternate" hreflang="it" href="https://ilmiovigneto.it/privacy-policy.html">
+<link rel="alternate" hreflang="fr" href="https://ilmiovigneto.it/fr/privacy-policy.html">
+<link rel="alternate" hreflang="x-default" href="https://ilmiovigneto.it/privacy-policy.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600;700;800&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
+<style>
+  .lang-switch { font-size: 0.82rem; opacity: 0.75; }
+  .lang-modal-overlay { display: none; position: fixed; inset: 0; background: rgba(17,20,17,0.55); z-index: 200; align-items: center; justify-content: center; padding: 20px; }
+  .lang-modal-overlay.open { display: flex; }
+  .lang-modal { background: var(--surface); border-radius: 16px; padding: 28px 26px; max-width: 360px; width: 100%; text-align: center; box-shadow: var(--shadow-strong); position: relative; }
+  .lang-modal-close { position: absolute; top: 10px; right: 12px; background: none; border: 0; cursor: pointer; font-size: 1.3rem; line-height: 1; color: var(--text-muted); padding: 4px 8px; border-radius: 8px; }
+  .lang-modal-close:hover { color: var(--text); background: var(--secondary); }
+  .lang-modal-text { font-family: 'Work Sans', sans-serif; font-weight: 700; font-size: 1.05rem; color: var(--text); margin-bottom: 20px; }
+  .lang-modal-actions { display: flex; flex-direction: column; gap: 10px; }
+  .lang-modal-actions .btn { width: 100%; }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a href="/fr/" class="logo">
+      <span class="logo-icon">🍇</span>
+      Il Mio Vigneto
+    </a>
+    <nav class="nav" id="nav">
+      <a href="epi-phytosanitaires.html">EPI Phytosanitaires</a>
+      <a href="maladies-vigne.html">Maladies de la vigne</a>
+      <a href="registre-phytosanitaire.html">Registre phytosanitaire</a>
+      <a href="certiphyto.html">Certiphyto</a>
+      <a href="prezzi.html">Tarifs</a>
+      <a href="blog.html">Blog</a>
+      <a href="../privacy-policy.html" class="lang-switch" onclick="return openLangModal(event)">IT</a>
+      <a href="https://app-vigna.vercel.app?lang=fr" onclick="return gtag_report_conversion('https://app-vigna.vercel.app?lang=fr');" class="btn-header-outline">Essai gratuit</a>
+      <a href="https://app-vigna.vercel.app?lang=fr" onclick="return gtag_report_conversion('https://app-vigna.vercel.app?lang=fr');" class="btn-header">Ouvrir l'appli</a>
+    </nav>
+  </div>
+</header>
+
+<article class="article">
+  <a href="/fr/" style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 14px; display: inline-block;">← Retour à l'accueil</a>
+  <h1>Politique de Confidentialité</h1>
+  <div class="meta">Dernière mise à jour : 8 août 2026</div>
+
+  <h2>Responsable du traitement</h2>
+  <p>Il Mio Vigneto / Mon Vignoble (ci-après « l'Application »), exploité par Scardapane Luciano, P.IVA (numéro TVA italien) 02381350699, dont le siège est à Contrada San Berardino 30, Monteodorisio (CH), Italie, joignable à l'adresse : <a href="mailto:info@ilmiovigneto.it">info@ilmiovigneto.it</a></p>
+
+  <h2>Données collectées</h2>
+  <p>Dans le cadre de l'utilisation de l'Application, nous collectons :</p>
+  <ul>
+    <li><strong>Données de compte</strong> : nom, email, mot de passe (chiffré), langue/pays</li>
+    <li><strong>Données de l'exploitation</strong> : informations sur le vignoble (localisation, superficie, cépages)</li>
+    <li><strong>Données de géolocalisation</strong> : coordonnées du vignoble pour les services météo et les cartes satellite (via Mapbox)</li>
+    <li><strong>Données du registre phytosanitaire</strong> : produits utilisés, dates, quantités (nécessaires à des fins de conformité réglementaire, notamment l'arrêté du 24/12/2025)</li>
+    <li><strong>Images</strong> : photos de feuilles/grappes téléchargées pour le diagnostic IA des maladies</li>
+    <li><strong>Données de paiement</strong> : gérées directement par Stripe, nous ne conservons aucun numéro de carte</li>
+    <li><strong>Données techniques</strong> : adresse IP, type de navigateur, cookies (voir <a href="cookie-policy.html">Politique de Cookies</a>)</li>
+  </ul>
+
+  <h2>Finalités du traitement</h2>
+  <ul>
+    <li>Fourniture du service (registre des traitements, alertes réglementaires, diagnostic IA, prévisions météo)</li>
+    <li>Gestion de l'abonnement et facturation</li>
+    <li>Communications de service (vérification email, réinitialisation de mot de passe, notifications de retrait de produits)</li>
+    <li>Amélioration du service et support client</li>
+    <li>Obligations légales</li>
+  </ul>
+
+  <h2>Bases juridiques</h2>
+  <ul>
+    <li>Exécution du contrat (fourniture du service)</li>
+    <li>Consentement (cookies non essentiels, communications marketing)</li>
+    <li>Obligation légale (conservation du registre phytosanitaire)</li>
+    <li>Intérêt légitime (sécurité, prévention de la fraude)</li>
+  </ul>
+
+  <h2>Sous-traitants</h2>
+  <p>Les données peuvent être traitées par des prestataires tiers agissant comme sous-traitants :</p>
+  <ul>
+    <li><strong>MongoDB Atlas</strong> (hébergement de la base de données)</li>
+    <li><strong>Google Gemini AI</strong> (traitement IA pour diagnostic et analyse de texte)</li>
+    <li><strong>Stripe</strong> (paiements)</li>
+    <li><strong>Mapbox</strong> (géolocalisation et cartes)</li>
+    <li><strong>Vercel / Render</strong> (hébergement de l'application)</li>
+    <li><strong>Zoho Mail / Resend</strong> (envoi d'emails transactionnels)</li>
+  </ul>
+
+  <h2>Transfert de données hors UE</h2>
+  <p>Certains prestataires (ex. Google, Stripe) peuvent traiter des données sur des serveurs situés hors de l'UE. Dans ce cas, le transfert s'effectue sur la base des Clauses Contractuelles Types approuvées par la Commission Européenne ou de garanties équivalentes adéquates.</p>
+
+  <h2>Conservation des données</h2>
+  <p>Les données sont conservées pendant la durée de l'abonnement, et pour les données du registre phytosanitaire, pendant la durée requise par la réglementation applicable. Les données de compte sont supprimées sur demande, sous réserve des obligations légales de conservation.</p>
+
+  <h2>Droits de l'utilisateur</h2>
+  <p>À tout moment, vous pouvez demander : l'accès, la rectification, l'effacement, la portabilité de vos données, la limitation ou l'opposition au traitement, en écrivant à <a href="mailto:info@ilmiovigneto.it">info@ilmiovigneto.it</a>. Vous disposez également du droit d'introduire une réclamation auprès de la <strong>CNIL</strong> (Commission Nationale de l'Informatique et des Libertés) ou de l'autorité de contrôle italienne compétente (Garante per la Protezione dei Dati Personali).</p>
+</article>
+
+<footer class="site-footer">
+  <div class="container">
+    <div style="border-top: 1px solid rgba(255,255,255,0.15); padding: 16px 0; margin-bottom: 16px;">
+      <p style="font-size: 0.78rem; color: #9ca3af; line-height: 1.6; text-align: center; margin: 0;">
+        ⚠️ Les informations présentes sur ce site ont un but exclusivement informatif. Elles ne remplacent pas l'avis d'un professionnel qualifié (technicien agricole, médecin du travail, conseiller en sécurité). Il Mio Vigneto décline toute responsabilité pour les dommages résultant de l'utilisation de ces informations.
+      </p>
+    </div>
+    <div class="footer-bottom" style="border: 0;">
+      <span>© 2026 Il Mio Vigneto</span>
+      <span><a href="/fr/">Accueil</a> · <a href="prezzi.html">Tarifs</a> · <a href="blog.html">Blog</a></span>
+      <span class="footer-social" style="display: inline-flex; gap: 12px; align-items: center;">
+        <a href="https://www.facebook.com/profile.php?id=61592769005586" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        </a>
+        <a href="https://www.instagram.com/mon.vignoble.app/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C8.74 0 8.333.014 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.014 8.333 0 8.74 0 12s.014 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.014 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.014-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.014 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.76 6.162 6.162 6.162 3.405 0 6.162-2.76 6.162-6.162 0-3.405-2.76-6.162-6.162-6.162zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795 0-1.44-.646-1.44-1.44 0-.794.646-1.439 1.44-1.439.793-.001 1.44.645 1.44 1.439z"/></svg>
+        </a>
+      </span>
+    </div>
+  </div>
+</footer>
+
+<div class="lang-modal-overlay" id="langModalOverlay" onclick="if (event.target === this) closeLangModal()">
+  <div class="lang-modal" role="dialog" aria-modal="true" aria-labelledby="langModalText">
+    <button type="button" class="lang-modal-close" onclick="closeLangModal()" aria-label="Fermer">×</button>
+    <p id="langModalText" class="lang-modal-text">Voulez-vous passer à la version italienne ?</p>
+    <div class="lang-modal-actions">
+      <a href="../privacy-policy.html" class="btn btn-primary">Oui, aller à la version italienne</a>
+      <button type="button" class="btn btn-secondary" onclick="closeLangModal()">Annuler</button>
+    </div>
+  </div>
+</div>
+<script>
+  function openLangModal(e) {
+    e.preventDefault();
+    document.getElementById('langModalOverlay').classList.add('open');
+    return false;
+  }
+  function closeLangModal() {
+    document.getElementById('langModalOverlay').classList.remove('open');
+  }
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') closeLangModal();
+  });
+</script>
+
+</body>
+</html>
