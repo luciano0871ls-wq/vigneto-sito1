@@ -236,6 +236,7 @@ img { max-width: 100%; display: block; }
 .section-title p { font-size: 1.1rem; max-width: 640px; margin: 14px auto 0; }
 
 .features { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+#funzioni .features { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
 .feature-card {
   background: var(--surface);
   border: 1.5px solid var(--border);
